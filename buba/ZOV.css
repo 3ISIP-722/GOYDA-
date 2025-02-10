@@ -9,3 +9,8 @@ body {
 main {
   
 }
+
+button {
+  background-color: royalblue;
+  color: grey;
+}
