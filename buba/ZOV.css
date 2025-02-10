@@ -4,10 +4,12 @@
 }
 
 body {
-  
+  background: grey;
 }
 main {
-  
+  background: white;
+  margin: auto;
+  border: 3px, royalblue, solid;
 }
 
 button {
