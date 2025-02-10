@@ -13,4 +13,6 @@ main {
 button {
   background-color: royalblue;
   color: grey;
+  margin: auto;
+  width: 30%;
 }
