@@ -8,7 +8,7 @@
         * {
             padding: 0;
             margin: 0;
-            box-sizing: border-box; /* Упрощает работу с отступами */
+            box-sizing: border-box;
         }
 
         body {
@@ -18,87 +18,183 @@
         }
 
         img {
- 
             height: 220px;
             width: 220px;
-
         }
 
         main {
-            font-family: Arial, sans-serif; /* Устанавливаем шрифт */
-            color: #333; /* Цвет текста */
+            font-family: Arial, sans-serif;
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Высота экрана */
+            height: 100vh;
         }
         .mainer {
             background: white;
             margin: auto;
             margin-top: 183px;
             margin-left: 0px;
-
             padding-top: 150px;
             border: 3px solid royalblue;
             border-radius: 15px;
-            padding: 40px; /* Увеличены отступы для более комфортного восприятия */
+            padding: 40px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            margin-bottom: 20px; /* Отступ снизу заголовка */
-            font-size: 2.5em; /* Размер заголовка */
-            color: royalblue; /* Цвет заголовка */
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: royalblue;
         }
 
         button {
             background-color: royalblue;
             color: white;
             margin: 10px auto;
-            width: 80%; /* Ширина кнопок */
+            width: 80%;
             border: none;
-            padding: 15px; /* Увеличены отступы для кнопок */
-            border-radius: 5px; /* Скругление углов */
+            padding: 15px;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 1.2em; /* Размер шрифта кнопок */
-            transition: background-color 0.3s; /* Плавный переход цвета */
+            font-size: 1.2em;
+            transition: background-color 0.3s;
         }
 
         button:hover {
-            background-color: darkblue; /* Цвет кнопки при наведении */
+            background-color: darkblue;
         }
 
         a {
-            text-decoration: none; /* Убираем подчеркивание у ссылок */
+            text-decoration: none;
         }
-        
+
+        /* Стили для модального окна */
+        .modal {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed; /* Оставаться на месте */
+            z-index: 1; /* Сидеть на вершине */
+            left: 0;
+            top: 0;
+            width: 100%; /* Полная ширина */
+            height: 100%; /* Полная высота */
+            overflow: auto; /* Включите прокрутку, если это необходимо */
+            background-color: rgb(0,0,0); /* Цвет запасной вариант */
+            background-color: rgba(0,0,0,0.4); /* Черный с непрозрачностью */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 5% сверху и по центру */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Может быть больше или меньше, в зависимости от размера экрана */
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <img src="img/logo.svg"><br>
 
     <main>
-
         <div class="mainer">
-
             <h1>Работы</h1>
-
-            <a href="pages/next.html"><button>10.02.25</button></a>
-
+            <button id="myBtn">10.02.25</button>
             <a href="pages/next.html"><button>17.02.25</button></a>
-
             <a href="pages/next.html"><button>24.02.25</button></a>
-
         </div>
 
-        <div id="output"></div>
+        <!-- Модальное окно -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>Вычисление значений функций</h1>
+                <div class="text-left">
+                        <h3><font color="blue">2.18.</font> Составить программу вычислений значений функций прилюбых значениях x и y.</h3>
+                    </div>
+                <!-- Задача 2.18 -->
+                <div class="task" id="task2_18">
+                    <div class="formula">
+                        \[ z = \frac{x + \frac{2 + y}{x^2}}{y + \frac{1}{\sqrt{x^2 + 10}}} \]
+                        \[ q = 7.25 \sin x - |y| \]
+                    </div>
+                </div>
+                <div class="text-left">
+                        <h3><font color="blue">2.19.</font> Составить программу расчета значения функций при любых значениях а и b.</h3>
+                    </div>
+                <!-- Задача 2.19 -->
+                <div class="task" id="task2_19">
+                    <div class="formula">
+                        \[ x = \frac{\frac{2}{a^2 + 25} + b}{\sqrt{b} + \frac{a + b}{2}} \]
+                        \[ y = \frac{|a| + 2 \sin b}{5.5a} \]
+                    </div>
+                    <div class="text-left">
+                            <h3><font color="blue">2.20.</font> Составить программу расчета значения функций при любых значениях e, f, g и h.</h3>
+                        </div>
+                <!-- Задача 2.20 -->
+                <div class="task" id="task2_20">
+                    <div class="formula">
+                        \[ a = \sqrt{|e - \frac{3}{f}|^3} + g \]
+                        \[ b = \sin e + \cos^2 h \]
+                        \[ c = \frac{33g}{ef - 3} \]
+                </div>
+                <div class="text-left">
+                        <h3><font color="blue">2.21.</font> Составить программу расчета значения функций при любых значениях e, f, g и h.</h3>
+                    </div>
+                <!-- Задача 2.21 -->
+                <div class="task" id="task2_21">
+                    <div class="formula">
+                        \[ a = \frac{e + \frac{f}{2}}{3} \]
+                        \[ b = |h^2 - g| \]
+                        \[ c = \sqrt{(g - h)^2 - 3 \sin e} \]
+                </div>
 
+        <script>
+            // Получить модальное окно
+            var modal = document.getElementById("myModal");
 
+            // Получить кнопку, которая открывает модальное окно
+            var btn = document.getElementById("myBtn");
+
+            // Получить элемент <span>, который закрывает модальное окно
+            var span = document.getElementsByClassName("close")[0];
+
+            // Когда пользователь нажимает на кнопку, откройте модальное окно
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // Когда пользователь нажимает на <span> (x), закройте модальное окно
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // Когда пользователь щелкает в любом месте за пределами модального окна, закройте его
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
 
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </main>
-
 </body>
 </html>
