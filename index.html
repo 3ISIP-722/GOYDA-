@@ -147,10 +147,14 @@
         }
 
         /* Показываем содержимое, когда класс 'show' добавлен */
-        .show {
+        .show.photo {
             display: block;
         }
         
+        .show {
+            display: block;
+        }
+
         .drop{
         position: absolute;
         right: 0;
@@ -168,12 +172,11 @@
         .photo {
             width: 250px;
             height: 150px;
+            display: none; 
+            margin-top: 70%;
         } 
 
-        .photo:hover {
 
-
-        }
     </style>
 </head>
 <body>
@@ -188,10 +191,11 @@
                 <a href="#">Сёмин Андрей</a>
                 <a href="#">Лаврухин Максим</a>
                 <a href="#">Теплюк Дмитрий</a>
-                <img class="photo" src="img/1.jpg">
-                
+
+            </div>
+            <img class="photo" id="photo" src="1.jpg">
+
         </div>
-    </div>
         
     </div>
     
@@ -278,9 +282,12 @@
             document.addEventListener('DOMContentLoaded', function() {
             const dropdownButton = document.querySelector('.dropdown-button');
             const dropdownContent = document.querySelector('.dropdown-content');
+            const photo = document.querySelector('#photo');
+
 
             dropdownButton.addEventListener('click', function() {
                 dropdownContent.classList.toggle('show');
+                photo.classList.toggle('show');
             });
 
             // Закрываем меню, если кликнули вне него
@@ -288,6 +295,7 @@
                 if (!event.target.matches('.dropdown-button')) {
                     if (dropdownContent.classList.contains('show')) {
                         dropdownContent.classList.remove('show');
+                        photo.classList.remove('show');
                     }
                 }
             });
