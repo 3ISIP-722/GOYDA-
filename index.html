@@ -3,329 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная страница</title>
+    <title>С днем святого Валентина</title>
+    <link rel="stylesheet" href="css/magic.css">
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            background-image: url('img/i.webp');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        img {
-            height: 220px;
-            width: 220px;
-        }
-
-        main {
-            font-family: Arial, sans-serif;
-            color: #333;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
+            background-color: #FFC5C5;
+            font-family: Arial, sans-serif;
+            user-select: none; /* Запретить выделение текста */
+            position: relative; /* Для абсолютного позиционирования дочерних элементов */
         }
-        .mainer {
-            background: white;
-            margin: auto;
-            margin-top: 183px;
-            margin-left: 0px;
-            padding-top: 150px;
-            border: 3px solid royalblue;
-            border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
         h1 {
-            margin-bottom: 20px;
-            font-size: 2.5em;
-            color: royalblue;
-        }
-
-        button {
-            background-color: royalblue;
-            color: white;
-            margin: 10px auto;
-            width: 80%;
-            border: none;
-            padding: 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.2em;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: darkblue;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        /* Стили для модального окна */
-        .modal {
-            display: none; /* Скрыто по умолчанию */
-            position: fixed; /* Оставаться на месте */
-            z-index: 1; /* Сидеть на вершине */
-            left: 0;
-            top: 0;
-            width: 100%; /* Полная ширина */
-            height: 100%; /* Полная высота */
-            overflow: auto; /* Включите прокрутку, если это необходимо */
-            background-color: rgb(0,0,0); /* Цвет запасной вариант */
-            background-color: rgba(0,0,0,0.4); /* Черный с непрозрачностью */
-            padding-top: 60px;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto; /* 5% сверху и по центру */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Может быть больше или меньше, в зависимости от размера экрана */
-            border-radius: 10px;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            
-        }
-
-        .dropdown-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: royalblue;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 150px;
-
-        }
-
-        .dropdown-content {
-            display: none; /* Скрываем содержимое по умолчанию */
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            color: #ff4d4d;
+            text-align: center;
+            margin-bottom: 30px;
             z-index: 1;
         }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 600px;
+            position: relative; /* Для правильного позиционирования изображений */
+            z-index: 1; /* Убедитесь, что кнопки выше изображений */
+        }
+        .button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 20px 30px; /* Увеличиваем размер кнопок */
+            margin: 10px;
+            cursor: pointer;
+            font-size: 18px; /* Увеличиваем размер шрифта */
+            transition: background-color 0.3s, transform 0.3s;
+            flex: 1 1 calc(30% - 20px); /* Задаем ширину кнопок для 3 столбиков */
+            box-sizing: border-box;
+            text-decoration: none; /* Убираем подчеркивание текста */
+            text-align: center; /* Центрируем текст */
         }
 
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
+        .button.long {
+            flex: 1 1 calc(100% - 20px); /* Делаем одну кнопку длинной */
         }
 
-        /* Показываем содержимое, когда класс 'show' добавлен */
-        .show.photo {
-            display: block;
+        .button:hover {
+            background-color: #ff1493;
+            transform: scale(1.05);
+            animation: pulse 1s infinite; /* Пульсация при наведении */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Тень при наведении */
+            transform: translateY(-5px); /* Поднимаем кнопку */
         }
         
-        .show {
-            display: block;
+        .mainPng {
+            display: flex;
+            justify-content: space-between; /* Распределяем изображения по бокам */
+            position: absolute; /* Абсолютное позиционирование */
+            top: 50%; /* Центруем по вертикали */
+            left: 0;
+            right: 0;
+            transform: translateY(-50%); /* Поднимаем на половину высоты */
+            z-index: 0; /* Убедитесь, что изображения ниже кнопок */
         }
 
-        .drop{
-        position: absolute;
-        right: 0;
-        top: 0;
-        margin-top: 1%;
-        width: 300px;
-        text-align: center;
+        .left, .right {
+            background-image: url('img/main.png'); /* Убедитесь, что это правильный путь к вашему изображению */
+            width: 330px;
+            height: 400px;
+            z-index: 0;
+            background-size: cover; /* Заполнение фона */
+            background-position: center; /* Центрируем изображение */
         }
 
-        .drop h1 {
-            margin: 0;
-            padding: 0;
+        .right {
+            transform: rotateY(180deg); /* Отразить изображение по оси Y */
         }
 
-        .photo {
-            width: 250px;
-            height: 150px;
-            display: none; 
-            margin-top: 70%;
-        } 
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
 
         @media (max-width: 480px) {
-            .mainer {
-                margin-top: 66px;
-                background-color: royalblue;
-                boreder: none;
-                border-radius: 0;
-            }
-            
-            .mainer h1 {
-                color: #fff;
+            .mainPng {
+                opacity: 0;
             }
 
-            body img {
-                height: 100px;
-                width: 100px;
+            main {
+                background-image: url('img/main2.png'); /* Убедитесь, что это правильный путь к вашему изображению */
+                background-size: cover; /* Заполнение фона */
+                background-position: center; /* Центрируем изображение */
+                width: 100%;
+                padding: 100%;
             }
-            
-            .drop h1 {
-            font-size: 20px;
-            }
+    
         }
-
-
     </style>
 </head>
 <body>
-    <img src="img/logo.svg"><br>
-
-    <div class="drop">
-        <h1>3ИСИП-722</h1>
-        <div class="dropdown">
-            <button class="dropdown-button">Команда</button>
-            <div class="dropdown-content">
-                <a href="#">Боярский Артём</a>
-                <a href="#">Сёмин Андрей</a>
-                <a href="#">Лаврухин Максим</a>
-                <a href="#">Теплюк Дмитрий</a>
-
-            </div>
-            <img class="photo" id="photo" src="img/1.jpg">
-
-        </div>
-        
-    </div>
-    
     <main>
-        <div class="mainer">
-            <h1>Работы</h1>
-            <button id="myBtn">10.02.25</button>
-            <a href="#"><button>17.02.25</button></a>
-            <a href="#"><button>24.02.25</button></a>
-        </div>
-
-        <!-- Модальное окно -->
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h1>Вычисление значений функций</h1>
-                <div class="text-left">
-                        <h3><font color="blue">2.18.</font> Составить программу вычислений значений функций прилюбых значениях x и y.</h3>
-                    </div>
-                <!-- Задача 2.18 -->
-                <div class="task" id="task2_18">
-                    <div class="formula">
-                        \[ z = \frac{x + \frac{2 + y}{x^2}}{y + \frac{1}{\sqrt{x^2 + 10}}} \]
-                        \[ q = 7.25 \sin x - |y| \]
-                    </div>
-                </div>
-                <div class="text-left">
-                        <h3><font color="blue">2.19.</font> Составить программу расчета значения функций при любых значениях а и b.</h3>
-                    </div>
-                <!-- Задача 2.19 -->
-                <div class="task" id="task2_19">
-                    <div class="formula">
-                        \[ x = \frac{\frac{2}{a^2 + 25} + b}{\sqrt{b} + \frac{a + b}{2}} \]
-                        \[ y = \frac{|a| + 2 \sin b}{5.5a} \]
-                    </div>
-                    <div class="text-left">
-                            <h3><font color="blue">2.20.</font> Составить программу расчета значения функций при любых значениях e, f, g и h.</h3>
-                        </div>
-                <!-- Задача 2.20 -->
-                <div class="task" id="task2_20">
-                    <div class="formula">
-                        \[ a = \sqrt{|e - \frac{3}{f}|^3} + g \]
-                        \[ b = \sin e + \cos^2 h \]
-                        \[ c = \frac{33g}{ef - 3} \]
-                </div>
-                <div class="text-left">
-                        <h3><font color="blue">2.21.</font> Составить программу расчета значения функций при любых значениях e, f, g и h.</h3>
-                    </div>
-                <!-- Задача 2.21 -->
-                <div class="task" id="task2_21">
-                    <div class="formula">
-                        \[ a = \frac{e + \frac{f}{2}}{3} \]
-                        \[ b = |h^2 - g| \]
-                        \[ c = \sqrt{(g - h)^2 - 3 \sin e} \]
-                </div>
-
-        <script>
-            // Получить модальное окно
-            var modal = document.getElementById("myModal");
-
-            // Получить кнопку, которая открывает модальное окно
-            var btn = document.getElementById("myBtn");
-
-            // Получить элемент <span>, который закрывает модальное окно
-            var span = document.getElementsByClassName("close")[0];
-
-            // Когда пользователь нажимает на кнопку, откройте модальное окно
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-
-            // Когда пользователь нажимает на <span> (x), закройте модальное окно
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-
-            // Когда пользователь щелкает в любом месте за пределами модального окна, закройте его
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-            
-            document.addEventListener('DOMContentLoaded', function() {
-            const dropdownButton = document.querySelector('.dropdown-button');
-            const dropdownContent = document.querySelector('.dropdown-content');
-            const photo = document.querySelector('#photo');
+    <div class="mainPng">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
 
 
-            dropdownButton.addEventListener('click', function() {
-                dropdownContent.classList.toggle('show');
-                photo.classList.toggle('show');
-            });
+    <h1>С днем святого Валентина</h1>
 
-            // Закрываем меню, если кликнули вне него
-            window.addEventListener('click', function(event) {
-                if (!event.target.matches('.dropdown-button')) {
-                    if (dropdownContent.classList.contains('show')) {
-                        dropdownContent.classList.remove('show');
-                        photo.classList.remove('show');
-                    }
-                }
-            });
-        });
-        </script>
 
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    </main>
+    <div class="button-container">
+        <a href="pages/heart1.html" class="button long">Длинная кнопка</a>
+        <a href="pages/heart2.html" class="button">Кнопка 2</a>
+        <a href="pages/heart3.html" class="button">Кнопка 3</a>
+        <a href="pages/heart4.html" class="button">Кнопка 4</a>
+        <a href="pages/heart5.html" class="button">Кнопка 5</a>
+        <a href="pages/heart6.html" class="button">Кнопка 6</a>
+        <a href="pages/heart7.html" class="button">Кнопка 7</a>
+        <a href="pages/heart8.html" class="button">Кнопка 8</a>
+        <a href="pages/heart9.html" class="button">Кнопка 9</a>
+        <a href="pages/heart10.html" class="button">Кнопка 10</a>
+    </div>
+</main>
+
+    <script src="js/magic.js"></script>
 </body>
 </html>
