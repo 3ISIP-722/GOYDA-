@@ -107,11 +107,71 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none; /* Скрываем содержимое по умолчанию */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Показываем содержимое, когда класс 'show' добавлен */
+        .show {
+            display: block;
+        }
+        
+        .dropdown {
+        position: absolute;
+        right: 0;
+        top: 0;
+        }
     </style>
 </head>
 <body>
     <img src="img/logo.svg"><br>
 
+    <div class="drop">
+        <p>3ИСИП722</p>
+        <div class="dropdown">
+            <button class="dropdown-button">Выберите опцию</button>
+            <div class="dropdown-content">
+                <a href="#">Боярский Артём</a>
+                <a href="#">Сёмин Андрей</a>
+                <a href="#">Лаврухин Максим</a>
+                <a href="#">Теплюк Дмитрий</a>
+        </div>
+    </div>
+        
+    </div>
+    
     <main>
         <div class="mainer">
             <h1>Работы</h1>
@@ -191,6 +251,24 @@
                     modal.style.display = "none";
                 }
             }
+            
+            document.addEventListener('DOMContentLoaded', function() {
+            const dropdownButton = document.querySelector('.dropdown-button');
+            const dropdownContent = document.querySelector('.dropdown-content');
+
+            dropdownButton.addEventListener('click', function() {
+                dropdownContent.classList.toggle('show');
+            });
+
+            // Закрываем меню, если кликнули вне него
+            window.addEventListener('click', function(event) {
+                if (!event.target.matches('.dropdown-button')) {
+                    if (dropdownContent.classList.contains('show')) {
+                        dropdownContent.classList.remove('show');
+                    }
+                }
+            });
+    
         </script>
 
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
