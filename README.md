@@ -41,24 +41,59 @@ AutoZAPCHASTI – лидер на Российском рынке, подтве�
 
 ![User Features](http://i.imgur.com/WbF1fi2.png)
 
+<a href="https://3isip-722.github.io/GOYDA-/pages/index_login.html" target="_blank"><img src="img/ot2.jpg" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+---
+2. Разработанна страница регистрации, поля дают исчерпывающее предстваления для дальнейших взаимодействий с пользователем.
+
 <a href="https://3isip-722.github.io/GOYDA-/pages/index_login.html" target="_blank"><img src="img/ot1.jpg" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 ---
-Здесь произхлдит вход в акаунт
+3. Разработанна страница авторизации, кнопки и поля выполнены в лаконичных тонах для удобного и понятного взаимодествия.
 
-
-## Setup
-Clone this repo to your desktop and run `npm install` to install all the dependencies.
-
-You might want to look into `config.json` to make change the port you want to use and set up a SSL certificate.
-
+<a href="https://3isip-722.github.io/GOYDA-/pages/index_login.html" target="_blank"><img src="img/ot3.jpg" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 ---
+Здесь произходит регистрация
 
-## Usage
-After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
+## Установка
 
-Once the dependencies are installed, you can run  `npm start` to start the application. You will then be able to access it at localhost:3000
+Чтобы запустить проект локально, выполните следующие шаги:
 
-To give yourself administrator permissions on the chat, you will have to type `/role [your-name]` in the app console.
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/ваш-логин/ваш-репозиторий.git
+   ```
+
+2. Перейдите в директорию проекта:
+   ```bash
+   cd ваш-репозиторий
+   ```
+
+3. Установите необходимые зависимости:
+   ```bash
+   npm install
+   ```
+
+4. Запустите локальный сервер:
+   ```bash
+   npm start
+   ```
+
+Теперь вы можете открыть браузер и перейти по адресу `http://localhost:3000`, чтобы увидеть сайт в действии.
+
+## Используемые технологии
+
+- HTML
+- CSS
+- JavaScript
+
+## Вклад
+
+Если вы хотите внести свой вклад в проект, пожалуйста, создайте форк репозитория, внесите изменения и создайте pull request. Мы будем рады вашим предложениям и улучшениям!
+
+## Контакты
+
+Если у вас есть вопросы или предложения, вы можете связаться с нами по электронной почте: [ваша_почта@example.com](mailto:ваша_почта@example.com).
+
+
 
 ---
 
