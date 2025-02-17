@@ -44,7 +44,7 @@
             margin-bottom: 5px;
         }
 
-        input[type="text"], input[type="password"], input[type="email"] {
+        input[type="text"], input[type="password"], input[type="email"], input[type="date"] {
             width: 100%;
             padding: 12px;
             font-size: 1rem;
@@ -75,6 +75,16 @@
             margin-top: 5px;
         }
 
+        .agreement {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .agreement input {
+            margin-right: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -84,57 +94,106 @@
             <h1>Регистрация</h1>
         </div>
 
-        <form id="registrationForm">
+        <form id="registerForm">
+            <!-- Поле ФИО -->
             <div class="form-group">
-                <label for="username">Имя пользователя:</label>
-                <input type="text" id="username" name="username" placeholder="Введите имя">
-                <div class="error" id="usernameError"></div>
+                <label for="registerFullName">ФИО:</label>
+                <input type="text" id="registerFullName" name="fullName" placeholder="Введите ФИО" required>
+                <div class="error" id="registerFullNameError"></div>
+            </div>
+
+            <!-- Поле дата рождения -->
+            <div class="form-group">
+                <label for="registerBirthDate">Дата рождения:</label>
+                <input type="date" id="registerBirthDate" name="birthDate" required>
+                <div class="error" id="registerBirthDateError"></div>
             </div>
 
             <div class="form-group">
-                <label for="email">Электронная почта:</label>
-                <input type="email" id="email" name="email" placeholder="Введите почту">
-                <div class="error" id="emailError"></div>
+                <label for="registerEmail">Электронная почта:</label>
+                <input type="email" id="registerEmail" name="email" placeholder="Введите почту" required>
+                <div class="error" id="registerEmailError"></div>
             </div>
 
             <div class="form-group">
-                <label for="password">Пароль:</label>
-                <input type="password" id="password" name="password" placeholder="Введите пароль">
-                <div class="error" id="passwordError"></div>
+                <label for="registerPassword">Пароль:</label>
+                <input type="password" id="registerPassword" name="password" placeholder="Введите пароль" required>
+                <div class="error" id="registerPasswordError"></div>
             </div>
+
+            <div class="form-group">
+                <label for="registerPasswordConfirm">Подтвердите пароль:</label>
+                <input type="password" id="registerPasswordConfirm" name="passwordConfirm" placeholder="Повторите пароль" required>
+                <div class="error" id="registerPasswordConfirmError"></div>
+            </div>
+
+            <div class="form-group agreement">
+                <input type="checkbox" id="registerAgreement" name="agreement">
+                <label for="registerAgreement">Я даю своё согласие на обработку личных данных</label>
+            </div>
+            <div class="error" id="registerAgreementError"></div>
 
             <button type="submit">Зарегистрироваться</button>
         </form>
     </div>
 
     <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
             let isValid = true;
-            
+
             // Сброс ошибок
-            document.getElementById('usernameError').textContent = '';
-            document.getElementById('emailError').textContent = '';
-            document.getElementById('passwordError').textContent = '';
+            document.getElementById('registerFullNameError').textContent = '';
+            document.getElementById('registerBirthDateError').textContent = '';
+            document.getElementById('registerEmailError').textContent = '';
+            document.getElementById('registerPasswordError').textContent = '';
+            document.getElementById('registerPasswordConfirmError').textContent = '';
+            document.getElementById('registerAgreementError').textContent = '';
 
             // Проверка пустых полей
-            if (document.getElementById('username').value === '') {
-                document.getElementById('usernameError').textContent = 'Пожалуйста, введите имя пользователя.';
-                isValid = false;
-            }
-            if (document.getElementById('email').value === '') {
-                document.getElementById('emailError').textContent = 'Пожалуйста, введите электронную почту.';
-                isValid = false;
-            }
-            if (document.getElementById('password').value === '') {
-                document.getElementById('passwordError').textContent = 'Пожалуйста, введите пароль.';
+            if (document.getElementById('registerFullName').value === '') {
+                document.getElementById('registerFullNameError').textContent = 'Пожалуйста, введите ваше ФИО.';
                 isValid = false;
             }
 
-            // Если форма валидна, отправляем (можно добавить здесь действия для отправки данных)
+            if (document.getElementById('registerBirthDate').value === '') {
+                document.getElementById('registerBirthDateError').textContent = 'Пожалуйста, выберите дату рождения.';
+                isValid = false;
+            }
+
+            if (document.getElementById('registerEmail').value === '') {
+                document.getElementById('registerEmailError').textContent = 'Пожалуйста, введите электронную почту.';
+                isValid = false;
+            }
+
+            if (document.getElementById('registerPassword').value === '') {
+                document.getElementById('registerPasswordError').textContent = 'Пожалуйста, введите пароль.';
+                isValid = false;
+            }
+
+            if (document.getElementById('registerPasswordConfirm').value === '') {
+                document.getElementById('registerPasswordConfirmError').textContent = 'Пожалуйста, подтвердите пароль.';
+                isValid = false;
+            }
+
+            // Сверка паролей
+            const password = document.getElementById('registerPassword').value;
+            const passwordConfirm = document.getElementById('registerPasswordConfirm').value;
+            if (password !== passwordConfirm) {
+                document.getElementById('registerPasswordConfirmError').textContent = 'Пароли не совпадают.';
+                isValid = false;
+            }
+
+            // Проверка чекбокса согласия
+            if (!document.getElementById('registerAgreement').checked) {
+                document.getElementById('registerAgreementError').textContent = 'Вы должны дать согласие на обработку личных данных.';
+                isValid = false;
+            }
+
+            // Если форма валидна, выводим сообщение
             if (isValid) {
-                alert('Регистрация прошла успешно!');
+                alert('Вы успешно зарегистрированы!');
             }
         });
     </script>
