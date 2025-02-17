@@ -9,12 +9,7 @@ AutoZAPCHASTI
 
 ![Index Preview](https://i.imgur.com/HyuXsvQ.png)
 
----
-## Buy me a coffee
 
-Whether you use this project, have learned something from it, or just like it, please consider supporting it by buying me a coffee, so I can dedicate more time on open-source projects like this :)
-
-<a href="https://3isip-722.github.io/GOYDA-/pages/" target="_blank"><img src="https://i.imgur.com/zLuhUJV.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 ---
 ### Качественные автозапчасти для иномарок в нашем интернет-магазине
@@ -37,9 +32,10 @@ AutoZAPCHASTI – один из ведущих поставщиков автоз
 
 Качественное обслуживание в нашем-интернет-магазине
 AutoZAPCHASTI – лидер на Российском рынке, подтвердивший свою квалификацию и профессионализм. Ежедневно к нам на сайт заходят тысячи посетителей, многие становятся нашими постоянными клиентами.
-Сотрудники магазина вежливые, коммуникабельные, смогут подобрать автозапчасти по артикулу, модели, серии или по году выпуска машины. Каждый заказчик может рассчитывать на квалифицированную поддержку, качественное обслуживание и умеренные цены!
 
-![User Features](http://i.imgur.com/WbF1fi2.png)
+<a href="https://3isip-722.github.io/GOYDA-/pages/" target="_blank"><img src="https://i.imgur.com/zLuhUJV.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+---
+1. Успешно офрмлен файл README.MD. Файл важен для детального описания и предстваления обширной информации о функционале и возможностях продукта.
 
 <a href="https://3isip-722.github.io/GOYDA-/pages/index_login.html" target="_blank"><img src="img/ot2.jpg" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 ---
@@ -51,8 +47,7 @@ AutoZAPCHASTI – лидер на Российском рынке, подтве�
 
 <a href="https://3isip-722.github.io/GOYDA-/pages/index_login.html" target="_blank"><img src="img/ot3.jpg" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 ---
-Здесь произходит регистрация
-
+тут будет каталог
 ## Установка
 
 Чтобы запустить проект локально, выполните следующие шаги:
@@ -91,13 +86,9 @@ AutoZAPCHASTI – лидер на Российском рынке, подтве�
 
 ## Контакты
 
-Если у вас есть вопросы или предложения, вы можете связаться с нами по электронной почте: [ваша_почта@example.com](mailto:ваша_почта@example.com).
+Если у вас есть вопросы или предложения, вы можете связаться с нами по электронной почте: [bukva@mail.ru](mailto:bukva@mail.ru).
 
 
 
 ---
 
-## License
->You can check out the full license [here](https://github.com/IgorAntun/node-chat/blob/master/LICENSE)
-
-This project is licensed under the terms of the **MIT** license.
