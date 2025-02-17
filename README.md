@@ -17,8 +17,6 @@ Whether you use this project, have learned something from it, or just like it, p
 <a href="https://3isip-722.github.io/GOYDA-/pages/" target="_blank"><img src="https://i.imgur.com/zLuhUJV.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 ---
-
-## Features
 ### Качественные автозапчасти для иномарок в нашем интернет-магазине
 AutoZAPCHASTI – один из ведущих поставщиков автозапчастей в России. Мы напрямую сотрудничаем с импортерами, у нас можно заказать любые комплектующие для автомобилей и получить их в течение 24 часов. Для подбора нужной детали на сайте можно воспользоваться поиском, отметив номер в поисковой строке или выбрать онлайн по марке машины, указав модель и модификацию.
 Сотрудничество с нами уже оценили тысячи благодарных клиентов:
