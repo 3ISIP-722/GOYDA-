@@ -42,13 +42,7 @@ AutoZAPCHASTI – лидер на Российском рынке, подтве�
 ![User Features](http://i.imgur.com/WbF1fi2.png)
 
 <a href="https://3isip-722.github.io/GOYDA-/pages/" target="_blank"><img src="img/ot1.jpg" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-
-
-#### There are 3 admin levels:
-- **Helper:** Can delete chat messages
-- **Moderator:** The above plus the ability to kick and ban users
-- **Administrator:** All the above plus send global alerts and promote/demote users
-
+Здесь произхлдит вход в акаунт
 ---
 
 ## Setup
