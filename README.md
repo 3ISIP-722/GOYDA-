@@ -7,7 +7,7 @@ AutoZAPCHASTI
 Добро пожаловать на наш сайт автозапчастей! Здесь вы можете найти широкий ассортимент запчастей для автомобилей, а также полезные советы и информацию о ремонте и обслуживании автомобилей.
 
 
-![Index Preview](https://i.imgur.com/HyuXsvQ.png](https://3isip-722.github.io/GOYDA-/#)
+![Index Preview](https://3isip-722.github.io/GOYDA-/#)
 
 
 
