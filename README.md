@@ -41,9 +41,10 @@ AutoZAPCHASTI – лидер на Российском рынке, подтве�
 
 ![User Features](http://i.imgur.com/WbF1fi2.png)
 
-<a href="https://3isip-722.github.io/GOYDA-/pages/" target="_blank"><img src="img/ot1.jpg" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-Здесь произхлдит вход в акаунт
+<a href="https://3isip-722.github.io/GOYDA-/pages/index_login.html" target="_blank"><img src="img/ot1.jpg" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 ---
+Здесь произхлдит вход в акаунт
+
 
 ## Setup
 Clone this repo to your desktop and run `npm install` to install all the dependencies.
