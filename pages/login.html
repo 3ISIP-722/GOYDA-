@@ -116,8 +116,25 @@
                 document.getElementById('loginEmailError').textContent = 'Пожалуйста, введите электронную почту.';
                 isValid = false;
             }
+
+            const email = localStorage.getItem('email')
+            
+
+            if (document.getElementById('loginEmail').value != email) {
+                document.getElementById('loginEmailError').textContent = 'Неверная почта.';
+                isValid = false;
+            }
+
             if (document.getElementById('loginPassword').value === '') {
                 document.getElementById('loginPasswordError').textContent = 'Пожалуйста, введите пароль.';
+                isValid = false;
+            }
+
+            const password = localStorage.getItem('password')
+
+
+            if (document.getElementById('loginPassword').value != password ) {
+                document.getElementById('loginPasswordError').textContent = 'Неверный пароль';
                 isValid = false;
             }
 
