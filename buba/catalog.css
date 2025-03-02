@@ -297,7 +297,8 @@ footer a:hover {
 @media screen and (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);
-        position: absolute;
+        position: fixed;
+        
         top: 0;
         left: 0;
     }
@@ -308,6 +309,7 @@ footer a:hover {
 
     .menu {
         display: none;
+
     }
 
     .sidebar.open {
@@ -316,6 +318,7 @@ footer a:hover {
 
     .menu-toggle {
         display: block;
+        position: fixed;
         background-color: #ff6b6b;
         color: #fff;
         font-size: 1.5rem;
@@ -323,5 +326,24 @@ footer a:hover {
         padding: 10px;
         border-radius: 8px;
         cursor: pointer;
+        height: 100vh;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .menu a:nth-child(2) {
+        display: none;
+    }
+
+    .menu a{
+        font-size: 12px;
+        text-wrap: nowrap;
+
     }
 }
