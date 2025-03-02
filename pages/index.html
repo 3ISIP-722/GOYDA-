@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Магазин</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .products {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .cart-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cart-button:hover {
+            background-color: #45a049;
+        }
+        .add-to-cart {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .add-to-cart:hover {
+            background-color: #007399;
+        }
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="cart-button" onclick="goToCart()">Корзина</button>
+        
+        <div class="products">
+            <div class="product-card" data-id="1">
+                <img src="https://via.placeholder.com/200" alt="Футболка">
+                <h3>Футболка</h3>
+                <p class="price">1000₽</p>
+                <div class="quantity-control">
+                    <button onclick="changeQuantity(this, -1)">-</button>
+                    <span>1</span>
+                    <button onclick="changeQuantity(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Добавить в корзину</button>
+            </div>
+
+            <div class="product-card" data-id="2">
+                <img src="https://via.placeholder.com/200" alt="Джинсы">
+                <h3>Джинсы</h3>
+                <p class="price">2000₽</p>
+                <div class="quantity-control">
+                    <button onclick="changeQuantity(this, -1)">-</button>
+                    <span>1</span>
+                    <button onclick="changeQuantity(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Добавить в корзину</button>
+            </div>
+
+            <div class="product-card" data-id="3">
+                <img src="https://via.placeholder.com/200" alt="Кроссовки">
+                <h3>Кроссовки</h3>
+                <p class="price">3000₽</p>
+                <div class="quantity-control">
+                    <button onclick="changeQuantity(this, -1)">-</button>
+                    <span>1</span>
+                    <button onclick="changeQuantity(this, 1)">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(this)">Добавить в корзину</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeQuantity(button, change) {
+            const quantitySpan = button.parentElement.querySelector('span');
+            let quantity = parseInt(quantitySpan.textContent);
+            
+            quantity = Math.max(1, quantity + change);
+            quantitySpan.textContent = quantity;
+        }
+
+        function addToCart(button) {
+            const card = button.closest('.product-card');
+            const productId = card.dataset.id;
+            const productName = card.querySelector('h3').textContent;
+            const price = parseInt(card.querySelector('.price').textContent);
+            const quantity = parseInt(card.querySelector('.quantity-control span').textContent);
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            const existingProduct = cart.find(item => item.id === productId);
+            if (existingProduct) {
+                existingProduct.quantity = quantity;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    price: price,
+                    quantity: quantity
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Товар добавлен в корзину!');
+        }
+
+        function goToCart() {
+            window.location.href = 'korzina.html';
+        }
+    </script>
+</body>
+</html>

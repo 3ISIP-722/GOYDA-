@@ -196,7 +196,7 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
-            border: #2c2a2a solid 1px;
+            border: #2c2a2a15 solid 1px;
             border-radius: 15px;
             background-color: #fff;
         }
@@ -221,7 +221,7 @@
         }
         .total-row {
             font-weight: bold;
-        }
+            }
         .back-button {
             padding: 10px 20px;
             background-color: #4CAF50;
@@ -241,6 +241,17 @@
             max-width: 100px;
             max-width: 100px;
         }
+        #clear-cart {
+            background-color: #2c2a2a;
+            border-radius: 10px;
+            padding: 2%;
+            color: #fff;
+            border: none;
+        }
+        #clear-cart:hover {
+            background-color: #585353;
+        }
+
     </style>
 </head>
 
@@ -250,7 +261,7 @@
     <nav>
         <div class="logo">GOyda</div>
         <div class="menu">
-            <a href="#">Категории</a>
+            <a href="catalog.html">Каталог</a>
             <a href="#">О нас</a>
             <a href="#">Контакты</a>
         </div>
@@ -267,7 +278,8 @@
     <div class="cart-content">
 
         <div class="container">
-            <button class="back-button" onclick="goBack()">Вернуться к покупкам</button>
+            <button id="clear-cart" onclick="clearCart()">Очистить корзину</button>
+
             <div id="cart-content"></div>
         </div>
         <div class="checkout-button">
@@ -326,8 +338,9 @@
 
             html += `
                 <tr class="total-row">
-                    <td colspan="3">Итого:</td>
-                    <td>${totalQuantity}</td>
+                    <td colspan="3" style="text-align: right">Итого:</td>
+            
+                    <td style="text-align: center">${totalQuantity} шт</td>
                     <td>${totalSum}₽</td>
                 </tr>
             </table>`;
@@ -350,6 +363,11 @@
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             document.getElementById('cart-content').innerHTML = createTable(cart);
         }
+
+        function clearCart() {
+        localStorage.removeItem('cart'); // Удаляем корзину из localStorage
+        updateCartDisplay(); // Обновляем отображение корзины
+    }
 
 
         // Инициализация страницы
