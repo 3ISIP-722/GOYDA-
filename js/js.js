@@ -54,6 +54,15 @@
             alert('Товар добавлен в корзину!');
         }
 
-        function goToCart() {
-            window.location.href = 'cart.html';
-        }
+function goToCart() {
+    window.location.href = 'cart.html';
+}
+
+// Получаем элементы
+const logo = document.querySelector('.logo');
+const sidebar = document.querySelector('.sidebar');
+
+// Добавляем обработчик события на клик
+logo.addEventListener('click', () => {
+    sidebar.classList.toggle('open'); // Переключаем класс 'open'
+});
