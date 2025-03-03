@@ -1,0 +1,912 @@
+{
+"categories": [
+    "Смартфоны",
+    "Ноутбуки",
+    "Планшеты",
+    "Наушники",
+    "Аксессуары"
+    ],
+    "products": [
+    {
+    "id": 1,
+    "name": "iPhone 14 Pro",
+    "category": "Смартфоны",
+    "description": "6.1\" OLED экран, A16 Bionic, 256GB",
+    "image": "/api/placeholder/300/200",
+    "price": 99999,
+    "inStock": true
+    },
+    {
+    "id": 2,
+    "name": "Samsung Galaxy S23 Ultra",
+    "category": "Смартфоны",
+    "description": "6.8\" Dynamic AMOLED, 512GB",
+    "image": "/api/placeholder/300/200",
+    "price": 109999,
+    "inStock": true
+    },
+    {
+    "id": 3,
+    "name": "Google Pixel 7 Pro",
+    "category": "Смартфоны",
+    "description": "6.7\" OLED, Tensor G2, 256GB",
+    "image": "/api/placeholder/300/200",
+    "price": 89999,
+    "inStock": false
+    },
+    {
+    "id": 4,
+    "name": "OnePlus 11",
+    "category": "Смартфоны",
+    "description": "6.7\" AMOLED, Snapdragon 8 Gen 2",
+    "image": "/api/placeholder/300/200",
+    "price": 69999,
+    "inStock": true
+    },
+    {
+    "id": 5,
+    "name": "Xiaomi 13 Pro",
+    "category": "Смартфоны",
+    "description": "6.73\" AMOLED, Snapdragon 8 Gen 2",
+    "image": "/api/placeholder/300/200",
+    "price": 79999,
+    "inStock": true
+    },
+    {
+    "id": 6,
+    "name": "iPhone 13",
+    "category": "Смартфоны",
+    "description": "6.1\" Super Retina XDR, A15",
+    "image": "/api/placeholder/300/200",
+    "price": 79999,
+    "inStock": true
+    },
+    {
+    "id": 7,
+    "name": "Huawei P60 Pro",
+    "category": "Смартфоны",
+    "description": "6.67\" OLED, Snapdragon 8+",
+    "image": "/api/placeholder/300/200",
+    "price": 84999,
+    "inStock": false
+    },
+    {
+    "id": 8,
+    "name": "Sony Xperia 1 V",
+    "category": "Смартфоны",
+    "description": "6.5\" 4K HDR OLED, SD 8 Gen 2",
+    "image": "/api/placeholder/300/200",
+    "price": 94999,
+    "inStock": true
+    },
+    {
+    "id": 9,
+    "name": "Nothing Phone 2",
+    "category": "Смартфоны",
+    "description": "6.7\" OLED, Glyph Interface",
+    "image": "/api/placeholder/300/200",
+    "price": 59999,
+    "inStock": true
+    },
+    {
+    "id": 10,
+    "name": "Motorola Edge 40 Pro",
+    "category": "Смартфоны",
+    "description": "6.67\" pOLED, SD 8 Gen 2",
+    "image": "/api/placeholder/300/200",
+    "price": 64999,
+    "inStock": false
+    },
+    {
+    "id": 11,
+    "name": "ASUS ROG Phone 7",
+    "category": "Смартфоны",
+    "description": "6.78\" AMOLED, Gaming Phone",
+    "image": "/api/placeholder/300/200",
+    "price": 89999,
+    "inStock": true
+    },
+    {
+    "id": 12,
+    "name": "iPhone SE 2022",
+    "category": "Смартфоны",
+    "description": "4.7\" Retina HD, A15 Bionic",
+    "image": "/api/placeholder/300/200",
+    "price": 49999,
+    "inStock": true
+    },
+    {
+    "id": 13,
+    "name": "Google Pixel 7a",
+    "category": "Смартфоны",
+    "description": "6.1\" OLED, Tensor G2",
+    "image": "/api/placeholder/300/200",
+    "price": 44999,
+    "inStock": true
+    },
+    {
+    "id": 14,
+    "name": "Samsung A54",
+    "category": "Смартфоны",
+    "description": "6.4\" Super AMOLED, 5G",
+    "image": "/api/placeholder/300/200",
+    "price": 39999,
+    "inStock": true
+    },
+    {
+    "id": 15,
+    "name": "Xiaomi Redmi Note 12",
+    "category": "Смартфоны",
+    "description": "6.67\" AMOLED, 108MP камера",
+    "image": "/api/placeholder/300/200",
+    "price": 29999,
+    "inStock": true
+    },
+    {
+    "id": 16,
+    "name": "MacBook Pro 16",
+    "category": "Ноутбуки",
+    "description": "M2 Max, 32GB RAM, 1TB SSD",
+    "image": "/api/placeholder/300/200",
+    "price": 259999,
+    "inStock": true
+    },
+    {
+    "id": 17,
+    "name": "Dell XPS 15",
+    "category": "Ноутбуки",
+    "description": "i9-13900H, 64GB RAM, RTX 4070",
+    "image": "/api/placeholder/300/200",
+    "price": 219999,
+    "inStock": true
+    },
+    {
+    "id": 18,
+    "name": "Lenovo ThinkPad X1 Carbon",
+    "category": "Ноутбуки",
+    "description": "i7-1355U, 32GB RAM, 1TB SSD",
+    "image": "/api/placeholder/300/200",
+    "price": 169999,
+    "inStock": true
+    },
+    {
+    "id": 19,
+    "name": "HP Spectre x360",
+    "category": "Ноутбуки",
+    "description": "i7-1355U, 16GB RAM, OLED",
+    "image": "/api/placeholder/300/200",
+    "price": 149999,
+    "inStock": false
+    },
+    {
+    "id": 20,
+    "name": "ASUS ROG Zephyrus G14",
+    "category": "Ноутбуки",
+    "description": "Ryzen 9 7940HS, RTX 4090",
+    "image": "/api/placeholder/300/200",
+    "price": 229999,
+    "inStock": true
+    },
+    {
+    "id": 21,
+    "name": "Razer Blade 18",
+    "category": "Ноутбуки",
+    "description": "i9-13950HX, RTX 4090, 32GB",
+    "image": "/api/placeholder/300/200",
+    "price": 289999,
+    "inStock": false
+    },
+    {
+    "id": 22,
+    "name": "MacBook Air M2",
+    "category": "Ноутбуки",
+    "description": "13.6\" Liquid Retina, 16GB",
+    "image": "/api/placeholder/300/200",
+    "price": 159999,
+    "inStock": true
+    },
+    {
+    "id": 23,
+    "name": "Microsoft Surface Laptop 5",
+    "category": "Ноутбуки",
+    "description": "13.5\" Touch, i7, 16GB RAM",
+    "image": "/api/placeholder/300/200",
+    "price": 139999,
+    "inStock": true
+    },
+    {
+    "id": 24,
+    "name": "Acer Predator Helios 300",
+    "category": "Ноутбуки",
+    "description": "i7-13700H, RTX 4070, 16GB",
+    "image": "/api/placeholder/300/200",
+    "price": 179999,
+    "inStock": true
+    },
+    {
+    "id": 25,
+    "name": "MSI Creator Z17",
+    "category": "Ноутбуки",
+    "description": "i9-13900H, RTX 4070, 64GB",
+    "image": "/api/placeholder/300/200",
+    "price": 249999,
+    "inStock": true
+    },
+    {
+    "id": 26,
+    "name": "LG Gram 17",
+    "category": "Ноутбуки",
+    "description": "i7-1360P, 32GB RAM, 2TB SSD",
+    "image": "/api/placeholder/300/200",
+    "price": 169999,
+    "inStock": false
+    },
+    {
+    "id": 27,
+    "name": "Alienware x17 R2",
+    "category": "Ноутбуки",
+    "description": "i9-12900HK, RTX 3080 Ti",
+    "image": "/api/placeholder/300/200",
+    "price": 269999,
+    "inStock": true
+    },
+    {
+    "id": 28,
+    "name": "Framework Laptop",
+    "category": "Ноутбуки",
+    "description": "i7-1280P, 32GB RAM, DIY Edition",
+    "image": "/api/placeholder/300/200",
+    "price": 149999,
+    "inStock": true
+    },
+    {
+    "id": 29,
+    "name": "Lenovo Legion Pro 7",
+    "category": "Ноутбуки",
+    "description": "Ryzen 9 7945HX, RTX 4090",
+    "image": "/api/placeholder/300/200",
+    "price": 259999,
+    "inStock": true
+    },
+    {
+    "id": 30,
+    "name": "HP Envy x360",
+    "category": "Ноутбуки",
+    "description": "Ryzen 7 7730U, 16GB RAM",
+    "image": "/api/placeholder/300/200",
+    "price": 129999,
+    "inStock": true
+    },
+    {
+    "id": 31,
+    "name": "iPad Pro 12.9",
+    "category": "Планшеты",
+    "description": "M2 chip, 1TB, Wi-Fi + 5G",
+    "image": "/api/placeholder/300/200",
+    "price": 159999,
+    "inStock": true
+    },
+    {
+    "id": 32,
+    "name": "Samsung Galaxy Tab S9 Ultra",
+    "category": "Планшеты",
+    "description": "14.6\" AMOLED, SD 8 Gen 2",
+    "image": "/api/placeholder/300/200",
+    "price": 129999,
+    "inStock": false
+    },
+    {
+    "id": 33,
+    "name": "Microsoft Surface Pro 9",
+    "category": "Планшеты",
+    "description": "13\" PixelSense, i7, 32GB",
+    "image": "/api/placeholder/300/200",
+    "price": 149999,
+    "inStock": true
+    },
+    {
+    "id": 34,
+    "name": "Lenovo Tab P12 Pro",
+    "category": "Планшеты",
+    "description": "12.6\" AMOLED, SD 870",
+    "image": "/api/placeholder/300/200",
+    "price": 69999,
+    "inStock": true
+    },
+    {
+    "id": 35,
+    "name": "Xiaomi Pad 6 Pro",
+    "category": "Планшеты",
+    "description": "11\" LCD, SD 8+ Gen 1",
+    "image": "/api/placeholder/300/200",
+    "price": 49999,
+    "inStock": true
+    },
+    {
+    "id": 36,
+    "name": "iPad Air",
+    "category": "Планшеты",
+    "description": "10.9\" Liquid Retina, M1",
+    "image": "/api/placeholder/300/200",
+    "price": 89999,
+    "inStock": true
+    },
+    {
+    "id": 37,
+    "name": "HUAWEI MatePad Pro",
+    "category": "Планшеты",
+    "description": "11\" OLED, Kirin 9000",
+    "image": "/api/placeholder/300/200",
+    "price": 79999,
+    "inStock": false
+    },
+    {
+    "id": 38,
+    "name": "Samsung Galaxy Tab A8",
+    "category": "Планшеты",
+    "description": "10.5\" TFT, Unisoc T618",
+    "image": "/api/placeholder/300/200",
+    "price": 29999,
+    "inStock": true
+    },
+    {
+    "id": 39,
+    "name": "Amazon Fire HD 10",
+    "category": "Планшеты",
+    "description": "10.1\" FHD, 32GB Storage",
+    "image": "/api/placeholder/300/200",
+    "price": 19999,
+    "inStock": true
+    },
+    {
+    "id": 40,
+    "name": "Realme Pad",
+    "category": "Планшеты",
+    "description": "10.4\" 2K Display, Helio G80",
+    "image": "/api/placeholder/300/200",
+    "price": 24999,
+    "inStock": true
+    },
+    {
+    "id": 41,
+    "name": "iPad Mini",
+    "category": "Планшеты",
+    "description": "8.3\" Liquid Retina, A15",
+    "image": "/api/placeholder/300/200",
+    "price": 69999,
+    "inStock": true
+    },
+    {
+    "id": 42,
+    "name": "HONOR Pad V8 Pro",
+    "category": "Планшеты",
+    "description": "12.1\" 2.5K LCD, Dimensity 8100",
+    "image": "/api/placeholder/300/200",
+    "price": 59999,
+    "inStock": false
+    },
+    {
+    "id": 43,
+    "name": "Nokia T21",
+    "category": "Планшеты",
+    "description": "10.36\" 2K Display, Unisoc T612",
+    "image": "/api/placeholder/300/200",
+    "price": 34999,
+    "inStock": true
+    },
+    {
+    "id": 44,
+    "name": "Lenovo Tab M10 Plus",
+    "category": "Планшеты",
+    "description": "10.61\" 2K IPS, Helio G80",
+    "image": "/api/placeholder/300/200",
+    "price": 29999,
+    "inStock": true
+    },
+    {
+    "id": 45,
+    "name": "TCL NXTPAPER 11",
+    "category": "Планшеты",
+    "description": "11\" Paper Display, Helio P60T",
+    "image": "/api/placeholder/300/200",
+    "price": 24999,
+    "inStock": true
+    },
+    {
+    "id": 46,
+    "name": "Sony WH-1000XM5",
+    "category": "Наушники",
+    "description": "Беспроводные с ANC",
+    "image": "/api/placeholder/300/200",
+    "price": 34999,
+    "inStock": true
+    },
+    {
+    "id": 47,
+    "name": "AirPods Pro 2",
+    "category": "Наушники",
+    "description": "TWS с H2 чипом",
+    "image": "/api/placeholder/300/200",
+    "price": 24999,
+    "inStock": true
+    },
+    {
+    "id": 48,
+    "name": "Bose QuietComfort 45",
+    "category": "Наушники",
+    "description": "Bluetooth 5.1, ANC",
+    "image": "/api/placeholder/300/200",
+    "price": 29999,
+    "inStock": true
+    },
+    {
+    "id": 49,
+    "name": "Samsung Galaxy Buds2 Pro",
+    "category": "Наушники",
+    "description": "24bit Hi-Fi, ANC",
+    "image": "/api/placeholder/300/200",
+    "price": 19999,
+    "inStock": true
+    },
+    {
+    "id": 50,
+    "name": "Sennheiser Momentum 4",
+    "category": "Наушники",
+    "description": "60ч работы, aptX Adaptive",
+    "image": "/api/placeholder/300/200",
+    "price": 34999,
+    "inStock": true
+    },
+    {
+    "id": 51,
+    "name": "Jabra Elite 10",
+    "category": "Наушники",
+    "description": "Dolby Atmos, MultiSensor Voice",
+    "image": "/api/placeholder/300/200",
+    "price": 29999,
+    "inStock": true
+    },
+    {
+    "id": 52,
+    "name": "Google Pixel Buds Pro",
+    "category": "Наушники",
+    "description": "Silent Seal ANC, 11мм динамики",
+    "image": "/api/placeholder/300/200",
+    "price": 24999,
+    "inStock": true
+    },
+    {
+    "id": 53,
+    "name": "Nothing Ear 2",
+    "category": "Наушники",
+    "description": "Hi-Res Audio, LHDC 5.0",
+    "image": "/api/placeholder/300/200",
+    "price": 19999,
+    "inStock": true
+    },
+    {
+    "id": 54,
+    "name": "Huawei FreeBuds Pro 3",
+    "category": "Наушники",
+    "description": "Triple Adaptive EQ, IP54",
+    "image": "/api/placeholder/300/200",
+    "price": 29999,
+    "inStock": true
+    },
+    {
+    "id": 55,
+    "name": "Beyerdynamic DT 900 Pro X",
+    "category": "Наушники",
+    "description": "Студийные, открытого типа",
+    "image": "/api/placeholder/300/200",
+    "price": 19999,
+    "inStock": true
+    },
+    {
+    "id": 56,
+    "name": "Sony LinkBuds S",
+    "category": "Наушники",
+    "description": "Компактные TWS с DSEE",
+    "image": "/api/placeholder/300/200",
+    "price": 24999,
+    "inStock": true
+    },
+    {
+    "id": 57,
+    "name": "Audio-Technica ATH-M50xBT2",
+    "category": "Наушники",
+    "description": "Bluetooth 5.0, 45мм драйверы",
+    "image": "/api/placeholder/300/200",
+    "price": 29999,
+    "inStock": true
+    },
+    {
+    "id": 58,
+    "name": "JBL Tour One M2",
+    "category": "Наушники",
+    "description": "Адаптивный ANC, 50ч работы",
+    "image": "/api/placeholder/300/200",
+    "price": 34999,
+    "inStock": true
+    },
+    {
+    "id": 59,
+    "name": "Marshall Monitor II ANC",
+    "category": "Наушники",
+    "description": "Bluetooth 5.0, 45ч работы",
+    "image": "/api/placeholder/300/200",
+    "price": 29999,
+    "inStock": true
+    },
+    {
+    "id": 60,
+    "name": "Shure AONIC 50",
+    "category": "Наушники",
+    "description": "Premium Hi-Fi звук, ANC",
+    "image": "/api/placeholder/300/200",
+    "price": 39999,
+    "inStock": true
+    },
+    {
+    "id": 61,
+    "name": "1MORE Sonoflow",
+    "category": "Наушники",
+    "description": "LDAC, 70ч работы",
+    "image": "/api/placeholder/300/200",
+    "price": 19999,
+    "inStock": true
+    },
+    {
+    "id": 62,
+    "name": "Samsung 45W Power Adapter",
+    "category": "Аксессуары",
+    "description": "Super Fast Charging 2.0",
+    "image": "/api/placeholder/300/200",
+    "price": 1999,
+    "inStock": true
+    },
+    {
+    "id": 63,
+    "name": "Apple MagSafe Charger",
+    "category": "Аксессуары",
+    "description": "15W беспроводная зарядка",
+    "image": "/api/placeholder/300/200",
+    "price": 3999,
+    "inStock": true
+    },
+    {
+    "id": 64,
+    "name": "Anker PowerCore 26800",
+    "category": "Аксессуары",
+    "description": "26800mAh, 3 USB порта",
+    "image": "/api/placeholder/300/200",
+    "price": 4999,
+    "inStock": true
+    },
+    {
+    "id": 65,
+    "name": "Spigen Tough Armor Case",
+    "category": "Аксессуары",
+    "description": "Противоударный чехол",
+    "image": "/api/placeholder/300/200",
+    "price": 2999,
+    "inStock": true
+    },
+    {
+    "id": 66,
+    "name": "PopSocket PopGrip",
+    "category": "Аксессуары",
+    "description": "Держатель для телефона",
+    "image": "/api/placeholder/300/200",
+    "price": 999,
+    "inStock": true
+    },
+    {
+    "id": 67,
+    "name": "Apple Pencil 2",
+    "category": "Аксессуары",
+    "description": "Стилус для iPad",
+    "image": "/api/placeholder/300/200",
+    "price": 9999,
+    "inStock": true
+    },
+    {
+    "id": 68,
+    "name": "Samsung S Pen Pro",
+    "category": "Аксессуары",
+    "description": "Bluetooth стилус",
+    "image": "/api/placeholder/300/200",
+    "price": 8999,
+    "inStock": true
+    },
+    {
+    "id": 69,
+    "name": "Belkin Screen Protector",
+    "category": "Аксессуары",
+    "description": "Защитное стекло",
+    "image": "/api/placeholder/300/200",
+    "price": 1499,
+    "inStock": true
+    },
+    {
+    "id": 70,
+    "name": "Microsoft Surface Dock 2",
+    "category": "Аксессуары",
+    "description": "4K@60Hz, USB-C",
+    "image": "/api/placeholder/300/200",
+    "price": 8999,
+    "inStock": true
+    },
+    {
+    "id": 71,
+    "name": "Apple AirTag",
+    "category": "Аксессуары",
+    "description": "Поисковый трекер",
+    "image": "/api/placeholder/300/200",
+    "price": 2999,
+    "inStock": true
+    },
+    {
+    "id": 72,
+    "name": "OnePlus Nord N300",
+    "category": "Смартфоны",
+    "description": "6.56\" LCD, 90Hz",
+    "image": "/api/placeholder/300/200",
+    "price": 19999,
+    "inStock": true
+    },
+    {
+    "id": 73,
+    "name": "Motorola G Power 2023",
+    "category": "Смартфоны",
+    "description": "6.5\" HD+, 5000mAh",
+    "image": "/api/placeholder/300/200",
+    "price": 14999,
+    "inStock": true
+    },
+    {
+    "id": 74,
+    "name": "ASUS Vivobook 15",
+    "category": "Ноутбуки",
+    "description": "i5-1235U, 8GB RAM",
+    "image": "/api/placeholder/300/200",
+    "price": 69999,
+    "inStock": true
+    },
+    {
+    "id": 75,
+    "name": "Acer Swift 3",
+    "category": "Ноутбуки",
+    "description": "Ryzen 7 5700U, 16GB",
+    "image": "/api/placeholder/300/200",
+    "price": 84999,
+    "inStock": true
+    },
+    {
+    "id": 76,
+    "name": "Oppo Pad 2",
+    "category": "Планшеты",
+    "description": "11.61\" LCD, Dimensity 9000",
+    "image": "/api/placeholder/300/200",
+    "price": 49999,
+    "inStock": true
+    },
+    {
+    "id": 77,
+    "name": "Vivo Pad 2",
+    "category": "Планшеты",
+    "description": "12.1\" LCD, Dimensity 9000",
+    "image": "/api/placeholder/300/200",
+    "price": 59999,
+    "inStock": true
+    },
+    {
+    "id": 78,
+    "name": "Beats Studio Pro",
+    "category": "Наушники",
+    "description": "Персональное аудио, ANC",
+    "image": "/api/placeholder/300/200",
+    "price": 34999,
+    "inStock": true
+    },
+    {
+    "id": 79,
+    "name": "OnePlus Buds Pro 2",
+    "category": "Наушники",
+    "description": "Spatial Audio, ANC",
+    "image": "/api/placeholder/300/200",
+    "price": 24999,
+    "inStock": true
+    },
+    {
+    "id": 80,
+    "name": "Apple Watch Ultra",
+    "category": "Аксессуары",
+    "description": "49mm, титановый корпус",
+    "image": "/api/placeholder/300/200",
+    "price": 89999,
+    "inStock": true
+    },
+    {
+    "id": 81,
+    "name": "Samsung Galaxy Watch 6",
+    "category": "Аксессуары",
+    "description": "Super AMOLED, BIA сенсор",
+    "image": "/api/placeholder/300/200",
+    "price": 59999,
+    "inStock": true
+    },
+    {
+    "id": 82,
+    "name": "Vivo X90 Pro+",
+    "category": "Смартфоны",
+    "description": "6.78\" AMOLED, SD 8 Gen 2",
+    "image": "/api/placeholder/300/200",
+    "price": 109999,
+    "inStock": true
+    },
+    {
+    "id": 83,
+    "name": "Oppo Find X6 Pro",
+    "category": "Смартфоны",
+    "description": "6.82\" AMOLED, SD 8 Gen 2",
+    "image": "/api/placeholder/300/200",
+    "price": 99999,
+    "inStock": true
+    },
+    {
+    "id": 84,
+    "name": "MSI Katana GF66",
+    "category": "Ноутбуки",
+    "description": "i7-12700H, RTX 3060",
+    "image": "/api/placeholder/300/200",
+    "price": 109999,
+    "inStock": true
+    },
+    {
+    "id": 85,
+    "name": "Gigabyte Aero 16",
+    "category": "Ноутбуки",
+    "description": "i9-12900HK, RTX 3080 Ti",
+    "image": "/api/placeholder/300/200",
+    "price": 299999,
+    "inStock": true
+    },
+    {
+    "id": 86,
+    "name": "BlackShark 5 Pro",
+    "category": "Смартфоны",
+    "description": "6.67\" OLED, 144Hz",
+    "image": "/api/placeholder/300/200",
+    "price": 69999,
+    "inStock": true
+    },
+    {
+    "id": 87,
+    "name": "Red Magic 8 Pro",
+    "category": "Смартфоны",
+    "description": "6.8\" AMOLED, 165Hz",
+    "image": "/api/placeholder/300/200",
+    "price": 74999,
+    "inStock": true
+    },
+    {
+    "id": 88,
+    "name": "Galaxy SmartTag2",
+    "category": "Аксессуары",
+    "description": "UWB трекер",
+    "image": "/api/placeholder/300/200",
+    "price": 2999,
+    "inStock": true
+    },
+    {
+    "id": 89,
+    "name": "Tile Pro",
+    "category": "Аксессуары",
+    "description": "Bluetooth трекер",
+    "image": "/api/placeholder/300/200",
+    "price": 2999,
+    "inStock": true
+    },
+    {
+    "id": 90,
+    "name": "Pixel Tablet",
+    "category": "Планшеты",
+    "description": "10.95\" LCD, Tensor G2",
+    "image": "/api/placeholder/300/200",
+    "price": 59999,
+    "inStock": true
+    },
+    {
+    "id": 91,
+    "name": "Realme Pad X",
+    "category": "Планшеты",
+    "description": "11\" 2K LCD, SD 695",
+    "image": "/api/placeholder/300/200",
+    "price": 39999,
+    "inStock": true
+    },
+    {
+    "id": 92,
+    "name": "Edifier WH950NB",
+    "category": "Наушники",
+    "description": "Hi-Res Audio, ANC",
+    "image": "/api/placeholder/300/200",
+    "price": 24999,
+    "inStock": true
+    },
+    {
+    "id": 93,
+    "name": "Creative SXFI Air",
+    "category": "Наушники",
+    "description": "Super X-Fi, RGB",
+    "image": "/api/placeholder/300/200",
+    "price": 19999,
+    "inStock": true
+    },
+    {
+    "id": 94,
+    "name": "Focal Listen Wireless",
+    "category": "Наушники",
+    "description": "Bluetooth, 20ч работы",
+    "image": "/api/placeholder/300/200",
+    "price": 29999,
+    "inStock": true
+    },
+    {
+    "id": 95,
+    "name": "JBL Tune 760NC",
+    "category": "Наушники",
+    "description": "Беспроводные, 35ч работы",
+    "image": "/api/placeholder/300/200",
+    "price": 19999,
+    "inStock": true
+    },
+    {
+    "id": 96,
+    "name": "Marshall Minor III",
+    "category": "Наушники",
+    "description": "TWS, 25ч работы",
+    "image": "/api/placeholder/300/200",
+    "price": 19999,
+    "inStock": true
+    },
+    {
+    "id": 97,
+    "name": "Anker Soundcore Life Q30",
+    "category": "Наушники",
+    "description": "ANC, 40ч работы",
+    "image": "/api/placeholder/300/200",
+    "price": 19999,
+    "inStock": true
+    },
+    {
+    "id": 98,
+    "name": "Beats Fit Pro",
+    "category": "Наушники",
+    "description": "TWS, 24ч работы, ANC",
+    "image": "/api/placeholder/300/200",
+    "price": 24999,
+    "inStock": true
+    },
+    {
+    "id": 99,
+    "name": "Razer Hammerhead True Wireless",
+    "category": "Наушники",
+    "description": "Gaming TWS, 20ч работы",
+    "image": "/api/placeholder/300/200",
+    "price": 19999,
+    "inStock": true
+    },
+    {
+    "id": 100,
+    "name": "Sony WF-1000XM4",
+    "category": "Наушники",
+    "description": "TWS с ANC, 24ч работы",
+    "image": "/api/placeholder/300/200",
+    "price": 34999,
+    "inStock": true
+    }
+    ]
+    }
+    
