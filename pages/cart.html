@@ -252,6 +252,91 @@
             background-color: #585353;
         }
 
+
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                position: fixed;
+                
+                top: 0;
+                left: 0;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .menu {
+                display: none;
+
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                display: block;
+                position: fixed;
+                background-color: #ff6b6b;
+                color: #fff;
+                font-size: 1.5rem;
+                border: none;
+                padding: 10px;
+                border-radius: 8px;
+                cursor: pointer;
+                height: 100vh;
+            }
+
+            .search-bar {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .menu a:nth-child(2) {
+                display: none;
+            }
+
+            .menu a{
+                font-size: 12px;
+                text-wrap: nowrap;
+
+            }
+            table {
+                margin: 0;
+                padding: 0;
+                max-width: 100vh;
+                font-size: 9px;
+            }
+            img {
+                max-width: 50px;
+                max-height: 50px;
+            }
+            .container {
+                width: 100vh;
+                margin: 0;
+                padding: 0;
+            }
+            .cart-content {
+                margin-top: 10%;
+                width: 100vh;
+                margin: 0;
+                padding: 0;
+            }
+            table button {
+                width: 30px;
+                height: 27px;
+                font-size: 12px;
+                text-align: center;
+            }
+            main {
+                width: 100vh;
+                padding-left: 5%;
+            }
+        }
     </style>
 </head>
 
@@ -273,7 +358,7 @@
             <a href="#">❤️ Избранное</a>
         </div>
     </nav>
-
+<main>
     <!-- Контент корзины -->
     <div class="cart-content">
 
@@ -286,6 +371,7 @@
             Оформить заказ
         </div>
     </div>
+</main>
     <!-- Футер -->
     <footer>
         <p>&copy; 2025 GOYDA. Все права защищены.</p>
