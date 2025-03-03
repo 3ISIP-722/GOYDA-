@@ -336,83 +336,42 @@ text-decoration: underline;
     </nav>
 
     <!-- Боковое меню -->
-    <div class="sidebar">
-        <h1>Категории</h1>
-        <div class="category">
-            <a href="wheels.html">Шины</a> 
-            <div class="subcategory">
-                <div><a href="wheels_sub_out.html">Внедорожные</a></div>
-                <div><a href="wheels_sub_winter.html">Зимние</a></div>
-            </div>
-        </div>
 
-        <div class="category">
-            <a href="diski.html">Диски</a> 
-            <div class="subcategory">
-                <div><a href="diski_sub_sport.html">Спортивные</a></div>
-                <div><a href="diski_sub_retro.html">Ретро</a></div>
-            </div>
-        </div>
-
-        <div class="category">
-            <a href="oil.html">Масла</a> 
-            <div class="subcategory">
-                <div><a href="oil_sub_engine.html">Моторное</a></div>
-                <div><a href="oil_sub_wash.html">Для промывки двигателя</a></div>
-            </div>
-        </div>
-
-        <div class="category">
-            <a href="tools.html">Инструменты</a> 
-            <div class="subcategory">
-                <div><a href="tools_sub_dom.html">Домкраты</a></div>
-                <div><a href="tools_sub_gkey.html">Гаечные ключи</a></div>
-
-            </div>
-        </div>
-
-        <!-- Слайдер для срока доставки -->
-        <div class="delivery-slider">
-            <label for="delivery">Срок доставки:</label>
-            <input type="range" id="delivery" name="delivery" min="1" max="30" step="1" value="7">
-            <span id="delivery-value">7 дней</span>
-        </div>
+    <div class="container">
+        <aside class="sidebar">
+    <div class="sidebar-section">
+    <h2>Поиск</h2>
+        <input type="text" id="searchInput" class="search-box" placeholder="Поиск товаров...">
     </div>
-
+    <div class="sidebar-section">
+        <h2>Категории</h2>
+        <ul id="categories"></ul>
+    </div>
+    <div class="sidebar-section">
+        <h2>Фильтры</h2>
+    <div class="filter-group">
+        <label>Цена</label>
+    <div class="price-inputs">
+        <input type="number" id="minPrice" placeholder="От">
+        <input type="number" id="maxPrice" placeholder="До">
+    </div>
+    </div>
+    <div class="filter-group">
+    <label>Наличие</label>
+    <div class="checkbox-group">
+    <label>
+    <input type="checkbox" id="inStock">
+    В наличии
+    </label>
+    </div>
+    </div>
+    </div>
+    </aside>
     <!-- Основной контент -->
     <div class="main-content">
 
  
-        <div class="container">
-            <aside class="sidebar">
-        <div class="sidebar-section">
-        <h2>Поиск</h2>
-            <input type="text" id="searchInput" class="search-box" placeholder="Поиск товаров...">
-        </div>
-        <div class="sidebar-section">
-            <h2>Категории</h2>
-            <ul id="categories"></ul>
-        </div>
-        <div class="sidebar-section">
-            <h2>Фильтры</h2>
-        <div class="filter-group">
-            <label>Цена</label>
-        <div class="price-inputs">
-            <input type="number" id="minPrice" placeholder="От">
-            <input type="number" id="maxPrice" placeholder="До">
-        </div>
-        </div>
-        <div class="filter-group">
-        <label>Наличие</label>
-        <div class="checkbox-group">
-        <label>
-        <input type="checkbox" id="inStock">
-        В наличии
-        </label>
-        </div>
-        </div>
-        </div>
-        </aside>
+
             <main class="content">
             <div id="products" class="products-grid"></div>
             <div class="pagination">
