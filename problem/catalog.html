@@ -455,7 +455,6 @@ function renderSubcategories() {
         return;
     }
     
-    // Получаем уникальные подкатегории для текущей категории
     const subcategories = [...new Set(products
         .filter(product => product.category === currentCategory)
         .map(product => product.subcategory))];
@@ -467,6 +466,7 @@ function renderSubcategories() {
         </li>
     `).join('');
 }
+
 
 function selectCategory(category) {
     currentCategory = category;
@@ -488,7 +488,7 @@ function selectSubcategory(subcategory) {
 function getFilteredProducts() {
     return products.filter(product => {
         const categoryMatch = !currentCategory || product.category === currentCategory;
-        const subcategoryMatch = !currentSubcategory || product.subcategory === currentSubcategory; // Фильтрация по подкатегории
+        const subcategoryMatch = !currentSubcategory || product.subcategory === currentSubcategory;
 
         const searchMatch = !searchQuery || 
             product.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -499,9 +499,10 @@ function getFilteredProducts() {
         
         const stockMatch = !inStockOnly || product.inStock;
         
-        return categoryMatch && subcategoryMatch && searchMatch && priceMatch && stockMatch; // Обновлено
+        return categoryMatch && subcategoryMatch && searchMatch && priceMatch && stockMatch;
     });
 }
+
 
         function getCurrentPageProducts() {
         const filtered = getFilteredProducts();
