@@ -106,7 +106,7 @@ nav {
 }
 
 .category {
-    color: #fff;
+    color: #000000;
     padding: 12px;
     border-radius: 8px;
     width: 100%;
@@ -133,20 +133,6 @@ nav {
     overflow-y: auto;
     z-index: 10;
     transition: all 0.5s ease-in-out;
-}
-
-.category:hover .subcategory {
-    display: block;
-}
-
-.subcategory div {
-    padding: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.subcategory div:hover {
-    background-color: #ff6b6b;
 }
 
 /* Главный контент */
