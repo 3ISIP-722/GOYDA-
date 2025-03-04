@@ -1,0 +1,389 @@
+{
+    "categories": [
+    "Шины",  
+    "Диски", 
+    "Масла",  
+    "Инструменты" 
+  ],
+  "subcategories": {
+    "Шины": [
+        "Внедорожные",
+        "Зимние"
+    ],
+    "Диски": [
+        "Ретро",
+        "Спортивные"
+    ],
+    "Масла": [
+      "Моторное",  
+      "Для промывки двигателя" 
+    ],
+    "Инструменты": [
+      "Домкраты",  
+      "Гаечные ключи"  
+    ]
+  },
+    
+    "products": [
+        {
+        "id": 1,
+        "name": "Шина зимняя 'Снежинка'",
+        "category": "Шины",
+        "subcategory": "Зимние",
+        "description": "Покрышка круглая",
+        "image": "../img/shinaWinter.webp",
+        "price": 5056,
+        "inStock": true
+        },
+        {
+        "id": 2,
+        "name": "Шина зимняя 'Дорожный Морозко'",
+        "category": "Шины",
+        "subcategory": "Зимние",
+        "description": "Покрышка круглая",
+        "image": "../img/shinaWinter_.webp",
+        "price": 6056,
+        "inStock": true
+        },
+        {
+        "id": 3,
+        "name": "Шина внедорожная 'Болотце'",
+        "category": "Шины",
+        "subcategory": "Внедорожные",
+        "description": "Покрышка круглая",
+        "image": "../img/boloto.jpg",
+        "price": 7011,
+        "inStock": true
+        },
+        {
+        "id": 4,
+        "name": "Шина внедорожная 'Ямка'",
+        "category": "Шины",
+        "subcategory": "Внедорожные",
+        "description": "Покрышка круглая",
+        "image": "../img/shinaOutroad_.webp",
+        "price": 9911,
+        "inStock": true
+        },
+        {
+        "id": 5,
+        "name": "Диск спортивный 'Быстрый'",
+        "category": "Диски",
+        "subcategory": "Спортивные",
+        "description": "Диск круглый",
+        "image": "../img/diskSport.webp",
+        "price": 17711,
+        "inStock": true
+        },
+        {
+        "id": 6,
+        "name": "Диск спортивный 'Молния'",
+        "category": "Диски",
+        "subcategory": "Спортивные",
+        "description": "Диск круглый",
+        "image": "../img/diskSport_.webp",
+        "price": 16731,
+        "inStock": true
+        },
+        {
+        "id": 7,
+        "name": "Диск ретро-реплика 'Старичок'",
+        "category": "Диски",
+        "subcategory": "Ретро",
+        "description": "Диск круглый",
+        "image": "../img/retroDisk.webp",
+        "price": 10711,
+        "inStock": true
+        },
+        {
+        "id": 8,
+        "name": "Диск ретро-реплика 'Улиточка'",
+        "category": "Диски",
+        "subcategory": "Ретро",
+        "description": "Диск круглый",
+        "image": "../img/retroDisk_.webp",
+        "price": 9711,
+        "inStock": true
+        },
+        {
+        "id": 9,
+        "name": "Масло для промывки 'Чистюля'",
+        "category": "Масла",
+        "subcategory": "Для промывки двигателя",
+        "description": "Масло дёшево",
+        "image": "../img/enginebrbr.webp",
+        "price": 711,
+        "inStock": true
+        },
+        {
+        "id": 10,
+        "name": "Масло для промывки 'Водичка'",
+        "category": "Масла",
+        "subcategory": "Для промывки двигателя",
+        "description": "Масло дёшево",
+        "image": "../img/enginebrbr_.webp",
+        "price": 1711,
+        "inStock": true
+        },
+        {
+        "id": 11,
+        "name": "Машинное масло 'Моментальны Капут'",
+        "category": "Масла",
+        "subcategory": "Моторное",
+        "description": "Масло дёшево",
+        "image": "../img/enginKaput.webp",
+        "price": 2111,
+        "inStock": true
+        },
+        {
+        "id": 12,
+        "name": "Машинное масло 'Долговечный Бр-бр'",
+        "category": "Масла",
+        "subcategory": "Моторное",
+        "description": "Масло дёшево",
+        "image": "../img/enginKaput_.webp",
+        "price": 1111,
+        "inStock": true
+        },
+        {
+        "id": 13,
+        "name": "Набор гаечных ключей '22 фиксика'",
+        "category": "Инструменты",
+        "subcategory": "Гаечные ключи",
+        "description": "Инструменты дорого",
+        "image": "../img/gkey1.webp",
+        "price": 3111,
+        "inStock": true
+        },
+        {
+        "id": 14,
+        "name": "Набор гаечных ключей 'Наборчик'",
+        "category": "Инструменты",
+        "subcategory": "Гаечные ключи",
+        "description": "Инструменты дорого",
+        "image": "../img/gkey2.webp",
+        "price": 3111,
+        "inStock": true
+        },
+        {
+        "id": 15,
+        "name": "Домкрат бутылочный 'Бутылочка'",
+        "category": "Инструменты",
+        "subcategory": "Домкраты",
+        "description": "Инструменты дорого",
+        "image": "../img/domHidrobutilka.webp",
+        "price": 4141,
+        "inStock": true
+        },
+        {
+        "id": 16,
+        "name": "Домкрат бутылочный 'На колёсах'",
+        "category": "Инструменты",
+        "subcategory": "Домкраты",
+        "description": "Инструменты дорого",
+        "image": "../img/domHidroPodcatnoi.webp",
+        "price": 5155,
+        "inStock": true
+        },
+         {
+        "id": 17,
+        "name": "Домкарт 'Длинный лифт'",
+        "category": "Инструменты",
+        "subcategory": "Домкраты",
+        "description": "Поднимает",
+        "image": "../img/domk_.jpg",
+        "price": 5031,
+        "inStock": false
+        },
+        {
+        "id": 18,
+        "name": "Масло моторное 'Дорожные покатушки'",
+        "category": "Масла",
+        "subcategory": "Моторное",
+        "description": "Масло жидкое",
+        "image": "../img/iolm__.jpg",
+        "price": 1256,
+        "inStock": false
+        },
+        {
+        "id": 19,
+        "name": "Масло моторное 'Мощынй тыгдык'",
+        "category": "Масла",
+        "subcategory": "Моторное",
+        "description": "Масло жидкое",
+        "image": "../img/oilm__.jpg",
+        "price": 912,
+        "inStock": false
+        },
+        {
+        "id": 20,
+        "name": "Масло моторное 'Летящий жир'",
+        "category": "Масла",
+        "subcategory": "Моторное",
+        "description": "Масло жидкое",
+        "image": "../img/oilm___.jpg",
+        "price": 855,
+        "inStock": false
+        },
+        {
+        "id": 21,
+        "name": "Масло Для промывки двигателя 'Утёнок'",
+        "category": "Масла",
+        "subcategory": "Для промывки двигателя",
+        "description": "Масло жидкое",
+        "image": "../img/oilw___.jpg",
+        "price": 600,
+        "inStock": false
+        },
+        {
+        "id": 22,
+        "name": "Масло Для промывки двигателя 'Яблочко'",
+        "category": "Масла",
+        "subcategory": "Для промывки двигателя",
+        "description": "Масло жидкое",
+        "image": "../img/oilw__.jpg",
+        "price": 900,
+        "inStock": true
+        },
+        {
+        "id": 23,
+        "name": "Масло Для промывки двигателя 'Яблочко (зелёное)'",
+        "category": "Масла",
+        "subcategory": "Для промывки двигателя",
+        "description": "Масло жидкое",
+        "image": "../img/oilw_.jpg",
+        "price": 900,
+        "inStock": true
+        },
+        {
+        "id": 24,
+        "name": "Шина внедорожная 'Земелька'",
+        "category": "Шины",
+        "subcategory": "Внедорожные",
+        "description": "Покрышка круглая",
+        "image": "../img/outroad_.jpg",
+        "price": 7811,
+        "inStock": false
+        },
+        {
+        "id": 25,
+        "name": "Шина внедорожная 'Погружение'",
+        "category": "Шины",
+        "subcategory": "Внедорожные",
+        "description": "Покрышка круглая",
+        "image": "../img/outroad__.jpg",
+        "price": 11831,
+        "inStock": true
+        },
+        {
+        "id": 26,
+        "name": "Шина внедорожная 'Бурьян'",
+        "category": "Шины",
+        "subcategory": "Внедорожные",
+        "description": "Покрышка круглая",
+        "image": "../img/outroad___.jpg",
+        "price": 9000,
+        "inStock": false
+        },
+        {
+        "id": 27,
+        "name": "Диск ретро-реплика 'Извилины'",
+        "category": "Диски",
+        "subcategory": "Ретро",
+        "description": "Диск круглый",
+        "image": "../img/retro_.jpg",
+        "price": 21711,
+        "inStock": false
+        },
+        {
+        "id": 28,
+        "name": "Диск ретро-реплика 'Прямота'",
+        "category": "Диски",
+        "subcategory": "Ретро",
+        "description": "Диск круглый",
+        "image": "../img/retro__.jpg",
+        "price": 21111,
+        "inStock": false
+        },
+        {
+        "id": 29,
+        "name": "Диск спортивный 'Красивый'",
+        "category": "Диски",
+        "subcategory": "Спортивные",
+        "description": "Диск круглый",
+        "image": "../img/sport_.jpg",
+        "price": 30111,
+        "inStock": true
+        },
+        {
+        "id": 30,
+        "name": "Диск спортивный 'Рабочий'",
+        "category": "Диски",
+        "subcategory": "Спортивные",
+        "description": "Диск круглый",
+        "image": "../img/sport__.jpg",
+        "price": 30111,
+        "inStock": true
+        },
+        {
+        "id": 31,
+        "name": "Шина зимняя 'Лед-ок'",
+        "category": "Шины",
+        "subcategory": "Зимние",
+        "description": "Покрышка круглая",
+        "image": "../img/winter_.jpg",
+        "price": 5056,
+        "inStock": true
+        },
+        {
+        "id": 32,
+        "name": "Шина зимняя 'Платформа'",
+        "category": "Шины",
+        "subcategory": "Зимние",
+        "description": "Покрышка круглая",
+        "image": "../img/winter__.jpg",
+        "price": 5056,
+        "inStock": true
+        },
+        {
+        "id": 33,
+        "name": "Набор гаечных ключей 'ИГРУШЕЧНЫЙ'",
+        "category": "Инструменты",
+        "subcategory": "Гаечные ключи",
+        "description": "Инструменты дорого",
+        "image": "../img/toolkit.jpg",
+        "price": 5000,
+        "inStock": false
+        },
+        {
+        "id": 34,
+        "name": "Набор гаечных ключей 'Починяйка'",
+        "category": "Инструменты",
+        "subcategory": "Гаечные ключи",
+        "description": "Инструменты дорого",
+        "image": "../img/toolkit_.jpg",
+        "price": 5000,
+        "inStock": false
+        },
+        {
+        "id": 35,
+        "name": "Набор гаечных ключей 'Ломайка'",
+        "category": "Инструменты",
+        "subcategory": "Гаечные ключи",
+        "description": "Инструменты дорого",
+        "image": "../img/toolkit__.jpg",
+        "price": 5600,
+        "inStock": false
+        },
+        {
+        "id": 36,
+        "name": "Домкрат красный 'Путишествие'",
+        "category": "Инструменты",
+        "subcategory": "Домкраты",
+        "description": "Инструменты дорого",
+        "image": "../img/domg.jpg",
+        "price": 5671,
+        "inStock": true
+        }
+    ]
+}

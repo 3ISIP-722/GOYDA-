@@ -6,8 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог</title>
     <link rel="stylesheet" href="../buba/catalog.css">
-</head>
+    <link rel="stylesheet" href="../buba/catalog1.css">
+    <style>
+        .modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
+}
 
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    margin-right: 15%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Ширина модального окна */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    </style>
+</head>
 <body>
 
     <!-- Верхнее меню -->
@@ -18,348 +55,306 @@
             <a href="#">О нас</a>
             <a href="#">Контакты</a>
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Поиск...">
-        </div>
         <div class="menu">
             <a onclick="goToCart()">🛒 Корзина</a>
-            <a href="#">❤️ Избранное</a>
+            <a href="favorites.html">❤️ Избранное</a>
         </div>
     </nav>
 
     <!-- Боковое меню -->
-    <div class="sidebar">
-        <h1>Категории</h1>
-        <div class="category">
-            <a href="wheels.html">Шины</a> 
-            <div class="subcategory">
-                <div><a href="wheels_sub_out.html">Внедорожные</a></div>
-                <div><a href="wheels_sub_winter.html">Зимние</a></div>
-            </div>
-        </div>
 
-        <div class="category">
-            <a href="diski.html">Диски</a> 
-            <div class="subcategory">
-                <div><a href="diski_sub_sport.html">Спортивные</a></div>
-                <div><a href="diski_sub_retro.html">Ретро</a></div>
-            </div>
-        </div>
-
-        <div class="category">
-            <a href="oil.html">Масла</a> 
-            <div class="subcategory">
-                <div><a href="oil_sub_engine.html">Моторное</a></div>
-                <div><a href="oil_sub_wash.html">Для промывки двигателя</a></div>
-            </div>
-        </div>
-
-        <div class="category">
-            <a href="tools.html">Инструменты</a> 
-            <div class="subcategory">
-                <div><a href="tools_sub_dom.html">Домкраты</a></div>
-                <div><a href="tools_sub_gkey.html">Гаечные ключи</a></div>
-
-            </div>
-        </div>
-
-        <!-- Слайдер для срока доставки -->
-        <div class="delivery-slider">
-            <label for="delivery">Срок доставки:</label>
-            <input type="range" id="delivery" name="delivery" min="1" max="30" step="1" value="7">
-            <span id="delivery-value">7 дней</span>
-        </div>
+    <div class="container">
+        <aside class="sidebar">
+    <div class="sidebar-section">
+    <h2>Поиск</h2>
+        <input type="text" id="searchInput" class="search-box" placeholder="Поиск товаров...">
     </div>
 
+    <div class="sidebar-section">
+        <h2>Фильтры</h2>
+    <div class="filter-group">
+        <label>Цена</label>
+    <div class="price-inputs">
+        <input type="number" id="minPrice" placeholder="От">
+        <input type="number" id="maxPrice" placeholder="До">
+    </div>
+    </div>
+        
+    <div class="filter-group">
+        
+    <label>Наличие</label>
+        
+    <div class="checkbox-group">
+        
+    <label>
+        
+    <input type="checkbox" id="inStock">
+        
+    В наличии
+    </label>
+        
+    </div>
+    </div>
+            
+    <div class="sidebar-section">
+        <h2>Категории</h2>
+        <ul id="categories"></ul>
+        <ul id="subcategories"></ul>
+        
+    </div>
+
+    </div>
+    </aside>
+        
     <!-- Основной контент -->
     <div class="main-content">
 
  
-        <div class="product-card" data-id="11">
-            <div class="product-images">
-                <img src="../img/shinaWinter.webp" alt="шина">
-            </div>
-            <div class="details"> 
-                <h3>Шина зимняя "Снежинка"</h3>
-                <p class="price">5056₽</p>
-                <div class="quantity-control">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span>1</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                </div>
-                <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-                <button class="favorite-button">❤️</button>
-            </div>
-        </div>
 
-    
-    <div class="product-card" data-id="12">
-        <div class="product-images">
-            <img src="../img/shinaWinter_.webp" alt="шина">
+            <main class="content">
+            <div id="products" class="products-grid"></div>
+            <div class="pagination">
+            <button id="firstPage">&lt;&lt;</button>
+            <button id="prevPage">&lt;</button>
+            <span id="currentPage">1</span>
+            <button id="nextPage">&gt;</button>
+            <button id="lastPage">&gt;&gt;</button>
         </div>
-        <div class="details"> 
-            <h3>Шина зимняя "Дорожный Морозко"</h3>
-            <p class="price">6056₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
+        </main>
         </div>
-    </div>
-
-    <div class="product-card" data-id="13">
-        <div class="product-images">
-            <img src="../img/shinaOutroad.webp" alt="шинавнедорожная">
-        </div>
-        <div class="details"> 
-            <h3>Шина внедорожная "Болотце"</h3>
-            <p class="price">7011₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="14">
-        <div class="product-images">
-            <img src="../img/shinaOutroad_.webp" alt="шинавнедорожная">
-        </div>
-        <div class="details"> 
-            <h3>Шина внедорожная "Ямка"</h3>
-            <p class="price">9911₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="15">
-        <div class="product-images">
-            <img src="../img/diskSport.webp" alt="disksport">
-        </div>
-        <div class="details"> 
-            <h3>Диск спортивный "Быстрый"</h3>
-            <p class="price">17711₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="16">
-        <div class="product-images">
-            <img src="../img/diskSport_.webp" alt="disksport">
-        </div>
-        <div class="details"> 
-            <h3>Диск спортивный "Молния"</h3>
-            <p class="price">16731₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="17">
-        <div class="product-images">
-            <img src="../img/retroDisk.webp" alt="diskретро">
-        </div>
-        <div class="details"> 
-            <h3>Диск ретро-реплика "Старичок"</h3>
-            <p class="price">10711₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="18">
-        <div class="product-images">
-            <img src="../img/retroDisk_.webp" alt="diskretro">
-        </div>
-        <div class="details"> 
-            <h3>Диск ретро-реплика "Улиточка"</h3>
-            <p class="price">9711₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="19">
-        <div class="product-images">
-            <img src="../img/enginebrbr.webp" alt="ббрбрб">
-        </div>
-        <div class="details"> 
-            <h3>Масло для промывки "Чистюля"</h3>
-            <p class="price">711₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="20">
-        <div class="product-images">
-            <img src="../img/enginebrbr_.webp" alt="брбрбрб">
-        </div>
-        <div class="details"> 
-            <h3>Масло для промывки "Водичка"</h3>
-            <p class="price">1711₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="21">
-        <div class="product-images">
-            <img src="../img/enginKaput.webp" alt="kaput">
-        </div>
-        <div class="details"> 
-            <h3>Машинное масло "Моментальны Капут"</h3>
-            <p class="price">2111₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="22">
-        <div class="product-images">
-            <img src="../img/enginKaput_.webp" alt="kaput">
-        </div>
-        <div class="details"> 
-            <h3>Машинное масло "Долговечный Бр-бр"</h3>
-            <p class="price">1111₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="23">
-        <div class="product-images">
-            <img src="../img/gkey1.webp" alt="kaput">
-        </div>
-        <div class="details"> 
-            <h3>Набор гаечных ключей "22 фиксика"</h3>
-            <p class="price">3111₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="24">
-        <div class="product-images">
-            <img src="../img/gkey2.webp" alt="kaput">
-        </div>
-        <div class="details"> 
-            <h3>Набор гаечных ключей "Наборчик"</h3>
-            <p class="price">3111₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="25">
-        <div class="product-images">
-            <img src="../img/domHidrobutilka.webp" alt="kaput">
-        </div>
-        <div class="details"> 
-            <h3>Домкрат бутылочный "Бутылочка"</h3>
-            <p class="price">4141₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-id="25">
-        <div class="product-images">
-            <img src="../img/domHidroPodcatnoi.webp" alt="kaput">
-        </div>
-        <div class="details"> 
-            <h3>Домкрат подкатной "На колёсах"</h3>
-            <p class="price">5155₽</p>
-            <div class="quantity-control">
-                <button onclick="changeQuantity(this, -1)">-</button>
-                <span>1</span>
-                <button onclick="changeQuantity(this, 1)">+</button>
-            </div>
-            <button onclick="addToCart(this)" class="add-to-cart">Купить</button>
-            <button class="favorite-button">❤️</button>
-        </div>
-    </div>
 
 </div>
-
+        <!-- Модальное окно -->
+<div id="modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-image" src="" alt="">
+        <h3 id="modal-name"></h3>
+        <p id="modal-description"></p>
+        <p class="modal-category" id="modal-category"></p>
+        <p class="modal-price" id="modal-price"></p>
+        <p class="modal-availability" id="modal-availability"></p>
+    </div>
+</div>
     <!-- Футер -->
     <footer>
         <p>&copy; 2025 GOYDA. Все права защищены.</p>
         <p>
-            <a href="we.html">Политика конфиденциальности</a> | <a href="we2.html">Условия использования</a>
+            <a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a>
         </p>
     </footer>
 
-    <script src="../js/js.js"></script>
+    <script>
+ let products = [];
+let categories = [];
+let subcategories = {}; // Добавляем переменную для хранения подкатегорий
+let currentCategory = null;
+let currentSubcategory = null; // Новая переменная для текущей подкатегории
+let currentPage = 1;
+const productsPerPage = 8;
+let searchQuery = '';
+let minPriceFilter = '';
+let maxPriceFilter = '';
+let inStockOnly = false;
 
+async function loadData() {
+    try {
+        const response = await fetch('cart.json');
+        const data = await response.json();
+        products = data.products;
+        categories = data.categories;
+        subcategories = data.subcategories; // Загружаем подкатегории
+        renderCategories();
+        renderProducts();
+    } catch (error) {
+        console.error('Ошибка загрузки данных:', error);
+    }
+}
+
+function renderCategories() {
+    const categoriesList = document.getElementById('categories');
+    categoriesList.innerHTML = `
+        <li class="${!currentCategory ? 'active' : ''}" 
+        onclick="selectCategory(null)">
+        Все категории
+        </li>
+        ${categories.map(category => `
+        <li class="${currentCategory === category ? 'active' : ''}"
+        onclick="selectCategory('${category}')">
+        ${category}
+        </li>
+        `).join('')}
+    `;
+}
+
+function selectCategory(category) {
+    currentCategory = category;
+    currentSubcategory = null; // Сбрасываем подкатегорию при смене категории
+    currentPage = 1;
+    renderCategories();
+    renderSubcategories(); // Отображаем подкатегории
+    renderProducts();
+}
+
+function renderSubcategories() {
+    const subcategoriesList = document.getElementById('subcategories');
+    if (currentCategory) {
+        subcategoriesList.innerHTML = `
+            <li class="${!currentSubcategory ? 'active' : ''}" 
+            onclick="selectSubcategory(null)">
+            Все подкатегории
+            </li>
+            ${subcategories[currentCategory].map(subcategory => `
+            <li class="${currentSubcategory === subcategory ? 'active' : ''}"
+            onclick="selectSubcategory('${subcategory}')">
+            ${subcategory}
+            </li>
+            `).join('')}
+        `;
+    } else {
+        subcategoriesList.innerHTML = ''; // Если категория не выбрана, очищаем подкатегории
+    }
+}
+
+function selectSubcategory(subcategory) {
+    currentSubcategory = subcategory;
+    currentPage = 1;
+    renderSubcategories();
+    renderProducts();
+}
+
+function getFilteredProducts() {
+    return products.filter(product => {
+        const categoryMatch = !currentCategory || product.category === currentCategory;
+        const subcategoryMatch = !currentSubcategory || product.subcategory === currentSubcategory; // Фильтрация по подкатегории
+
+        const searchMatch = !searchQuery || product.name.toLowerCase().includes(searchQuery.toLowerCase()) || product.description.toLowerCase().includes(searchQuery.toLowerCase());
+        
+        const priceMatch = (!minPriceFilter || product.price >= minPriceFilter) && (!maxPriceFilter || product.price <= maxPriceFilter);
+        
+        const stockMatch = !inStockOnly || product.inStock;
+        
+        return categoryMatch && subcategoryMatch && searchMatch && priceMatch && stockMatch; // Включаем фильтрацию по подкатегориям
+    });
+}
+
+function getCurrentPageProducts() {
+    const filtered = getFilteredProducts();
+    const start = (currentPage - 1) * productsPerPage;
+    return filtered.slice(start, start + productsPerPage);
+}
+
+
+
+        
+   function renderProducts() {
+    const productsContainer = document.getElementById('products');
+    const currentProducts = getCurrentPageProducts();
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    productsContainer.innerHTML = currentProducts.map(product => `
+        <div class="product-card" onclick="openModal(${JSON.stringify(product).replace(/"/g, '&quot;')})">
+            <button class="favorite-btn ${favorites.some(fav => fav.id === product.id) ? 'active' : ''}"
+            onclick="toggleFavorite(${JSON.stringify(product).replace(/"/g, '&quot;')})">♥</button>
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <p class="category">${product.category}</p>
+            <p class="price">Цена: ${product.price} ₽</p>
+            <p class="availability">${product.inStock ? 'В наличии' : 'Нет в наличии'}</p>
+            <button class="cart-button" 
+            onclick="addToCart(${product.id})"
+            ${!product.inStock ? 'disabled' : ''}>
+            ${cart[product.id] ? 'В корзине' : 'Добавить в корзину'}
+            </button>
+        </div>
+    `).join('');
+    
+    updatePagination();
+}
+
+        
+        function toggleFavorite(product) {
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        const index = favorites.findIndex(fav => fav.id === product.id);
+        if (index === -1) {
+        favorites.push(product);
+        } else {
+        favorites.splice(index, 1);
+        }
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        renderProducts();
+        }
+        
+        function addToCart(productId) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || {};
+        cart[productId] = (cart[productId] || 0) + 1;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderProducts();
+        }
+        
+        function updatePagination() {
+        const filtered = getFilteredProducts();
+        const totalPages = Math.ceil(filtered.length / productsPerPage);
+        document.getElementById('currentPage').textContent = currentPage;
+        document.getElementById('firstPage').disabled = currentPage === 1;
+        document.getElementById('prevPage').disabled = currentPage === 1;
+        document.getElementById('nextPage').disabled = currentPage === totalPages;
+        document.getElementById('lastPage').disabled = currentPage === totalPages;
+        }
+        
+        // Обработчики событий для фильтров
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        currentPage = 1;
+        renderProducts();
+        });
+        document.getElementById('minPrice').addEventListener('input', (e) => {
+        minPriceFilter = Number(e.target.value) || '';
+        currentPage = 1;
+        renderProducts();
+        });
+        document.getElementById('maxPrice').addEventListener('input', (e) => {
+        maxPriceFilter = Number(e.target.value) || '';
+        currentPage = 1;
+        renderProducts();
+        });
+        document.getElementById('inStock').addEventListener('change', (e) => {
+        inStockOnly = e.target.checked;
+        currentPage = 1;
+        renderProducts();
+        });
+        // Пагинация
+        document.getElementById('firstPage').addEventListener('click', () => {
+        currentPage = 1;
+        renderProducts();
+        });
+        document.getElementById('prevPage').addEventListener('click', () => {
+        if (currentPage > 1) {
+        currentPage--;
+        renderProducts();
+        }
+        });
+        document.getElementById('nextPage').addEventListener('click', () => {
+        const filtered = getFilteredProducts();
+        const totalPages = Math.ceil(filtered.length / productsPerPage);
+        if (currentPage < totalPages) {
+        currentPage++;
+        renderProducts();
+        }
+        });
+        document.getElementById('lastPage').addEventListener('click', () => {
+        const filtered = getFilteredProducts();
+        currentPage = Math.ceil(filtered.length / productsPerPage);
+        renderProducts();
+        });
+        document.addEventListener('DOMContentLoaded', loadData);
+        function goToCart() {
+        window.location.href = 'cart.html';
+    }
+        </script>
+    <script src="../js/modalcart.js"></script>
 </body>
 
 </html>
