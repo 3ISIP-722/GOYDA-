@@ -434,14 +434,12 @@ async function loadData() {
 function renderCategories() {
     const categoriesList = document.getElementById('categories');
     categoriesList.innerHTML = `
-        <li class="${!currentCategory ? 'active' : ''}" 
-        onclick="selectCategory(null)">
-        Все категории
+        <li class="${!currentCategory ? 'active' : ''}" onclick="selectCategory(null)">
+            Все категории
         </li>
         ${categories.map(category => `
-            <li class="${currentCategory === category ? 'active' : ''}"
-            onclick="selectCategory('${category}')">
-            ${category}
+            <li class="${currentCategory === category ? 'active' : ''}" onclick="selectCategory('${category}')">
+                ${category}
             </li>
         `).join('')}
     `;
@@ -451,18 +449,18 @@ function renderCategories() {
 function renderSubcategories() {
     const subcategoriesList = document.getElementById('subcategories');
     if (!currentCategory) {
-        subcategoriesList.innerHTML = '';
+        subcategoriesList.innerHTML = ''; // Очистка списка подкатегорий, если категория не выбрана
         return;
     }
-    
-    const subcategories = [...new Set(products
-        .filter(product => product.category === currentCategory)
-        .map(product => product.subcategory))];
-    
+
+    // Получение подкатегорий для текущей категории
+    const subcategories = subcategoriesData.subcategories[currentCategory] || [];
+
+    // Рендеринг подкатегорий
     subcategoriesList.innerHTML = subcategories.map(subcategory => `
         <li class="${currentSubcategory === subcategory ? 'active' : ''}"
         onclick="selectSubcategory('${subcategory}')">
-        ${subcategory}
+            ${subcategory}
         </li>
     `).join('');
 }
