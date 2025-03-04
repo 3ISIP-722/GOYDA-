@@ -7,7 +7,43 @@
     <title>Каталог</title>
     <link rel="stylesheet" href="../buba/catalog.css">
     <link rel="stylesheet" href="../buba/catalog1.css">
-    
+    <style>
+        .modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ширина модального окна */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+Найти еще
+    </style>
 </head>
 <body>
 
@@ -88,7 +124,18 @@
         </div>
 
 </div>
-
+        <!-- Модальное окно -->
+<div id="modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-image" src="" alt="">
+        <h3 id="modal-name"></h3>
+        <p id="modal-description"></p>
+        <p class="modal-category" id="modal-category"></p>
+        <p class="modal-price" id="modal-price"></p>
+        <p class="modal-availability" id="modal-availability"></p>
+    </div>
+</div>
     <!-- Футер -->
     <footer>
         <p>&copy; 2025 GOYDA. Все права защищены.</p>
@@ -200,31 +247,33 @@ function getCurrentPageProducts() {
 
 
         
-        function renderProducts() {
-        const productsContainer = document.getElementById('products');
-        const currentProducts = getCurrentPageProducts();
-        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        const cart = JSON.parse(localStorage.getItem('cart')) || {};
-        productsContainer.innerHTML = currentProducts.map(product => `
-        <div class="product-card">
-        <button class="favorite-btn ${favorites.some(fav => fav.id === product.id) ? 'active' : ''} "onclick="toggleFavorite(${JSON.stringify(product).replace(/"/g, '&quot;')})">
-        ♥
-        </button>
-        <img src="${product.image}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
-        <p class="category">${product.category}</p>
-        <p class="price">Цена: ${product.price} ₽</p>
-        <p class="availability">${product.inStock ? 'В наличии' : 'Нет в наличии'}</p>
-        <button class="cart-button" 
-        onclick="addToCart(${product.id})"
-        ${!product.inStock ? 'disabled' : ''}>
-        ${cart[product.id] ? 'В корзине' : 'Добавить в корзину'}
-        </button>
+   function renderProducts() {
+    const productsContainer = document.getElementById('products');
+    const currentProducts = getCurrentPageProducts();
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    productsContainer.innerHTML = currentProducts.map(product => `
+        <div class="product-card" onclick="openModal(${JSON.stringify(product).replace(/"/g, '&quot;')})">
+            <button class="favorite-btn ${favorites.some(fav => fav.id === product.id) ? 'active' : ''}"
+            onclick="toggleFavorite(${JSON.stringify(product).replace(/"/g, '&quot;')})">♥</button>
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <p class="category">${product.category}</p>
+            <p class="price">Цена: ${product.price} ₽</p>
+            <p class="availability">${product.inStock ? 'В наличии' : 'Нет в наличии'}</p>
+            <button class="cart-button" 
+            onclick="addToCart(${product.id})"
+            ${!product.inStock ? 'disabled' : ''}>
+            ${cart[product.id] ? 'В корзине' : 'Добавить в корзину'}
+            </button>
         </div>
-        `).join('');
-        updatePagination();
-        }
+    `).join('');
+    
+    updatePagination();
+}
+
         
         function toggleFavorite(product) {
         let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
