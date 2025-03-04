@@ -470,17 +470,20 @@ function renderSubcategories() {
 
 function selectCategory(category) {
     currentCategory = category;
+    currentSubcategory = null; // Сбрасываем подкатегорию при выборе новой категории
     currentPage = 1;
     renderCategories();
+    renderSubcategories(); // Обновляем подкатегории
     renderProducts();
 }
+
 
 function selectSubcategory(subcategory) {
     currentSubcategory = subcategory; // Устанавливаем текущую подкатегорию
     currentPage = 1;
-    renderSubcategories(); // Обновляем список подкатегорий
-    renderProducts();
+    renderProducts(); // Обновляем продукты
 }
+
 
 function getFilteredProducts() {
     return products.filter(product => {
