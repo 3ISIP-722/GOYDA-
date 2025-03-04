@@ -501,7 +501,12 @@ function getFilteredProducts() {
     });
 }
 
-
+        function getCurrentPageProducts() {
+        const filtered = getFilteredProducts();
+        const start = (currentPage - 1) * productsPerPage;
+        return filtered.slice(start, start + productsPerPage);
+        }
+        
 function renderProducts() {
     const productsContainer = document.getElementById('products');
     const currentProducts = getCurrentPageProducts(); // Получаем текущие продукты на странице
