@@ -1,17 +1,14 @@
-let modal = document.getElementById("myModal");
+function openModal(product) {
+    document.getElementById('modal-image').src = product.image;
+    document.getElementById('modal-name').innerText = product.name;
+    document.getElementById('modal-description').innerText = product.description;
+    document.getElementById('modal-category').innerText = `Категория: ${product.category}`;
+    document.getElementById('modal-price').innerText = `Цена: ${product.price} ₽`;
+    document.getElementById('modal-availability').innerText = product.inStock ? 'В наличии' : 'Нет в наличии';
 
-// Получить кнопку, которая открывает модальное окно
-let btn = document.getElementById("myBtn");
-
-// Получить элемент <span>, который закрывает модальное окно
-let span = document.getElementsByClassName("close")[0];
-
-// Когда пользователь нажимает на кнопку, откройте модальное окно
-btn.onclick = function() {
-    modal.style.display = "block";
+    document.getElementById('modal').style.display = 'block'; // Показываем модальное окно
 }
 
-// Когда пользователь нажимает на <span> (x), закройте модальное окно
-span.onclick = function() {
-    modal.style.display = "none";
+function closeModal() {
+    document.getElementById('modal').style.display = 'none'; // Скрываем модальное окно
 }
