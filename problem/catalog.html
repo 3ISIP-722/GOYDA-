@@ -356,7 +356,6 @@ text-decoration: underline;
     <div class="sidebar-section">
         <h2>Категории</h2>
         <ul id="categories"></ul>
-        <ul id="subcategories"></ul>
     </div>
     <div class="sidebar-section">
         <h2>Фильтры</h2>
@@ -448,13 +447,16 @@ function renderCategories() {
 }
 
 function renderSubcategories() {
-    const subcategoriesList = document.getElementById('subcategories'); // Предполагается наличие элемента для подкатегорий
+    const subcategoriesList = document.getElementById('subcategories');
     if (!currentCategory) {
         subcategoriesList.innerHTML = '';
         return;
     }
     
-    const subcategories = [...new Set(products.filter(product => product.category === currentCategory).map(product => product.subcategory))];
+    // Получаем уникальные подкатегории для текущей категории
+    const subcategories = [...new Set(products
+        .filter(product => product.category === currentCategory)
+        .map(product => product.subcategory))];
     
     subcategoriesList.innerHTML = subcategories.map(subcategory => `
         <li class="${currentSubcategory === subcategory ? 'active' : ''}"
@@ -473,20 +475,23 @@ function selectCategory(category) {
 }
 
 function selectSubcategory(subcategory) {
-    currentSubcategory = subcategory;
+    currentSubcategory = subcategory; // Устанавливаем текущую подкатегорию
     currentPage = 1;
-    renderSubcategories();
+    renderSubcategories(); // Обновляем список подкатегорий
     renderProducts();
 }
 
 function getFilteredProducts() {
     return products.filter(product => {
         const categoryMatch = !currentCategory || product.category === currentCategory;
-        const subcategoryMatch = !currentSubcategory || product.subcategory === currentSubcategory; // Добавлено
+        const subcategoryMatch = !currentSubcategory || product.subcategory === currentSubcategory; // Фильтрация по подкатегории
 
-        const searchMatch = !searchQuery || product.name.toLowerCase().includes(searchQuery.toLowerCase()) || product.description.toLowerCase().includes(searchQuery.toLowerCase());
+        const searchMatch = !searchQuery || 
+            product.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+            product.description.toLowerCase().includes(searchQuery.toLowerCase());
         
-        const priceMatch = (!minPriceFilter || product.price >= minPriceFilter) && (!maxPriceFilter || product.price <= maxPriceFilter);
+        const priceMatch = (!minPriceFilter || product.price >= minPriceFilter) && 
+            (!maxPriceFilter || product.price <= maxPriceFilter);
         
         const stockMatch = !inStockOnly || product.inStock;
         
