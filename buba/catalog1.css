@@ -91,6 +91,7 @@ border: 1px solid #ddd;
 border-radius: 4px;
 margin-bottom: 10px;
 }
+
 .filter-group {
 margin-bottom: 15px;
 }
@@ -215,7 +216,7 @@ cursor: pointer;
 transition: background-color 0.3s;
 }
 .pagination button:hover {
-background-color: rgba(172, 32, 32, 0,8);
+background-color: #e64c4c;
 }
 .pagination button:disabled {
 background-color: #ccc;
