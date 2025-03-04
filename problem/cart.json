@@ -51,7 +51,7 @@
         "category": "Шины",
         "subcategory": "Внедорожные",
         "description": "Покрышка круглая",
-        "image": "../img/out___.jpg",
+        "image": "../img/out____.jpg",
         "price": 7011,
         "inStock": true
         },
@@ -247,14 +247,143 @@
         },
         {
         "id": 23,
-        "name": "Масло Для промывки двигателя 'Яблочко'",
+        "name": "Масло Для промывки двигателя 'Яблочко (зелёное)'",
         "category": "Масла",
         "subcategory": "Для промывки двигателя",
         "description": "Масло жидкое",
         "image": "../img/oilw_.jpg",
         "price": 900,
         "inStock": true
+        },
+        {
+        "id": 24,
+        "name": "Шина внедорожная 'Земелька'",
+        "category": "Шины",
+        "subcategory": "Внедорожные",
+        "description": "Покрышка круглая",
+        "image": "../img/outroad_.jpg",
+        "price": 7811,
+        "inStock": false
+        },
+        {
+        "id": 25,
+        "name": "Шина внедорожная 'Погружение'",
+        "category": "Шины",
+        "subcategory": "Внедорожные",
+        "description": "Покрышка круглая",
+        "image": "../img/outroad__.jpg",
+        "price": 11831,
+        "inStock": true
+        },
+        {
+        "id": 26,
+        "name": "Шина внедорожная 'Бурьян'",
+        "category": "Шины",
+        "subcategory": "Внедорожные",
+        "description": "Покрышка круглая",
+        "image": "../img/outroad___.jpg",
+        "price": 9000,
+        "inStock": false
+        },
+        {
+        "id": 27,
+        "name": "Диск ретро-реплика 'Извилины'",
+        "category": "Диски",
+        "subcategory": "Ретро",
+        "description": "Диск круглый",
+        "image": "../img/retro_.jpg",
+        "price": 21711,
+        "inStock": false
+        },
+        {
+        "id": 28,
+        "name": "Диск ретро-реплика 'Прямота'",
+        "category": "Диски",
+        "subcategory": "Ретро",
+        "description": "Диск круглый",
+        "image": "../img/retro__.jpg",
+        "price": 21111,
+        "inStock": false
+        },
+        {
+        "id": 29,
+        "name": "Диск спортивный 'Красивый'",
+        "category": "Диски",
+        "subcategory": "Спортивные",
+        "description": "Диск круглый",
+        "image": "../img/sport_.jpg",
+        "price": 30111,
+        "inStock": true
+        },
+        {
+        "id": 30,
+        "name": "Диск спортивный 'Рабочий'",
+        "category": "Диски",
+        "subcategory": "Спортивные",
+        "description": "Диск круглый",
+        "image": "../img/sport__.jpg",
+        "price": 30111,
+        "inStock": true
+        },
+        {
+        "id": 31,
+        "name": "Шина зимняя 'Лед-ок'",
+        "category": "Шины",
+        "subcategory": "Зимние",
+        "description": "Покрышка круглая",
+        "image": "../img/winter_.jpg",
+        "price": 5056,
+        "inStock": true
+        },
+        {
+        "id": 32,
+        "name": "Шина зимняя 'Платформа'",
+        "category": "Шины",
+        "subcategory": "Зимние",
+        "description": "Покрышка круглая",
+        "image": "../img/winter__.jpg",
+        "price": 5056,
+        "inStock": true
+        },
+        {
+        "id": 33,
+        "name": "Набор гаечных ключей 'ИГРУШЕЧНЫЙ'",
+        "category": "Инструменты",
+        "subcategory": "Гаечные ключи",
+        "description": "Инструменты дорого",
+        "image": "../img/toolkit.jpg",
+        "price": 5000,
+        "inStock": false
+        },
+        {
+        "id": 34,
+        "name": "Набор гаечных ключей 'Починяйка'",
+        "category": "Инструменты",
+        "subcategory": "Гаечные ключи",
+        "description": "Инструменты дорого",
+        "image": "../img/toolkit_.jpg",
+        "price": 5000,
+        "inStock": false
+        },
+        {
+        "id": 35,
+        "name": "Набор гаечных ключей 'Ломайка'",
+        "category": "Инструменты",
+        "subcategory": "Гаечные ключи",
+        "description": "Инструменты дорого",
+        "image": "../img/toolkit__.jpg",
+        "price": 5600,
+        "inStock": false
+        },
+        {
+        "id": 36,
+        "name": "Домкрат красный 'Путишествие'",
+        "category": "Инструменты",
+        "subcategory": "Домкраты",
+        "description": "Инструменты дорого",
+        "image": "../img/domg.jpg",
+        "price": 5671,
+        "inStock": true
         }
-        
     ]
 }
