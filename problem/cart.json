@@ -51,7 +51,7 @@
         "category": "Шины",
         "subcategory": "Внедорожные",
         "description": "Покрышка круглая",
-        "image": "../img/shinaOutroad.webp",
+        "image": "../img/out.jpg",
         "price": 7011,
         "inStock": true
         },
@@ -185,6 +185,76 @@
         "price": 5155,
         "inStock": true
         }
-    
+         {
+        "id": 17,
+        "name": "Домкарт 'Длинный лифт'",
+        "category": "Инструменты",
+        "subcategory": "Домкраты",
+        "description": "Поднимает",
+        "image": "../img/domk_.jpg",
+        "price": 5031,
+        "inStock": false
+        },
+        {
+        "id": 18,
+        "name": "Масло моторное 'Дорожные покатушки'",
+        "category": "Масла",
+        "subcategory": "Моторное",
+        "description": "Масло жидкое",
+        "image": "../img/iolm__.jpg",
+        "price": 1256,
+        "inStock": false
+        },
+        {
+        "id": 19,
+        "name": "Масло моторное 'Мощынй тыгдык'",
+        "category": "Масла",
+        "subcategory": "Моторное",
+        "description": "Масло жидкое",
+        "image": "../img/oilm__.jpg",
+        "price": 912,
+        "inStock": false
+        },
+        {
+        "id": 20,
+        "name": "Масло моторное 'Летящий жир'",
+        "category": "Масла",
+        "subcategory": "Моторное",
+        "description": "Масло жидкое",
+        "image": "../img/oilm___.jpg",
+        "price": 855,
+        "inStock": false
+        },
+        {
+        "id": 21,
+        "name": "Масло Для промывки двигателя 'Утёнок'",
+        "category": "Масла",
+        "subcategory": "Для промывки двигателя",
+        "description": "Масло жидкое",
+        "image": "../img/oilw___.jpg",
+        "price": 600,
+        "inStock": false
+        },
+        {
+        "id": 22,
+        "name": "Масло Для промывки двигателя 'Яблочко'",
+        "category": "Масла",
+        "subcategory": "Для промывки двигателя",
+        "description": "Масло жидкое",
+        "image": "../img/oilw__.jpg",
+        "price": 900,
+        "inStock": true
+        },
+        {
+        "id": 23,
+        "name": "Масло Для промывки двигателя 'Яблочко'",
+        "category": "Масла",
+        "subcategory": "Для промывки двигателя",
+        "description": "Масло жидкое",
+        "image": "../img/oilw_.jpg",
+        "price": 900,
+        "inStock": true
+        }
+        
     ]
 }
