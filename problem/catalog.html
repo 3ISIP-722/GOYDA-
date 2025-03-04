@@ -450,18 +450,20 @@ text-decoration: underline;
         renderProducts();
         }
         
-        function getFilteredProducts() {
-        return products.filter(product => {
+function getFilteredProducts() {
+    return products.filter(product => {
         const categoryMatch = !currentCategory || product.category === currentCategory;
+        const subcategoryMatch = !currentSubcategory || product.subcategory === currentSubcategory; // Добавляем фильтрацию по подкатегориям
         const searchMatch = !searchQuery ||
-        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchQuery.toLowerCase());
+            product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            product.description.toLowerCase().includes(searchQuery.toLowerCase());
         const priceMatch = (!minPriceFilter || product.price >= minPriceFilter) &&
-        (!maxPriceFilter || product.price <= maxPriceFilter);
+            (!maxPriceFilter || product.price <= maxPriceFilter);
         const stockMatch = !inStockOnly || product.inStock;
-        return categoryMatch && searchMatch && priceMatch && stockMatch;
-        });
-        }
+
+        return categoryMatch && subcategoryMatch && searchMatch && priceMatch && stockMatch; // Обновляем условие возврата
+    });
+}
 
         function getCurrentPageProducts() {
         const filtered = getFilteredProducts();
