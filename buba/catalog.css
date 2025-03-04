@@ -62,7 +62,7 @@ nav {
     color: #ff6b6b;
 }
 
-.search-bar input {
+.search-box input {
     border: 2px solid #e5e5e5;
     padding: 8px 15px;
     border-radius: 25px;
@@ -70,7 +70,7 @@ nav {
     transition: border-color 0.3s ease;
 }
 
-.search-bar input:focus {
+.search-box input:focus {
     border-color: #ff6b6b;
 }
 
