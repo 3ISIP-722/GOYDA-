@@ -1,3 +1,4 @@
+
   /* Сброс стилей */
   * {
     margin: 0;
@@ -105,26 +106,14 @@ nav {
 }
 
 .category {
-    background-color: #4d4d4d;
     color: #fff;
     padding: 12px;
     border-radius: 8px;
     width: 100%;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
     position: relative;
-}
-
-.category a {
-    padding-top: 10%;
-    padding-right: 100%;
-    padding-bottom: 10%;
-
-}
-
-.category:hover {
-    background-color: #ff6b6b;
 }
 
 /* Модальное окно с подкатегориями */
