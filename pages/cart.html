@@ -317,16 +317,18 @@ text-decoration: underline;
 </style>
 </head>
 <body>
-<div class="header-nav">
-<div class="nav-container">
-<h1>Корзина</h1>
-<div class="nav-links">
-<a href="catalog.html">Каталог</a>
-<a href="favorites.html">Избранное</a>
-<a href="cart.html">Корзина</a>
-</div>
-</div>
-</div>
+    <nav>
+        <div class="logo">GOyda</div>
+        <div class="menu">
+            <a href="catalog.html">Каталог</a>
+            <a href="#">О нас</a>
+            <a href="#">Контакты</a>
+        </div>
+        <div class="menu">
+            <a onclick="goToCart()">🛒 Корзина</a>
+            <a href="favorites.html">❤️ Избранное</a>
+        </div>
+    </nav>
 <div class="container">
 <main class="content">
 <div id="cartContent"></div>
