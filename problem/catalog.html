@@ -405,66 +405,94 @@ text-decoration: underline;
     </footer>
 
     <script>
-        let products = [];
-        let categories = [];
-        let currentCategory = null;
-        let currentSubCategory = null;
-        let currentPage = 1;
-        const productsPerPage = 8;
-        let searchQuery = '';
-        let minPriceFilter = '';
-        let maxPriceFilter = '';
-        let inStockOnly = false;
-        
-        async function loadData() {
-        try {
-            const response = await fetch('cart.json');
-            const data = await response.json();
-            products = data.products;
-            categories = data.categories;
-            renderCategories();
-            renderProducts();
-            } catch (error) {
-            console.error('Ошибка загрузки данных:', error);
-            }
-        }
-        
-        function renderCategories() {
-        const categoriesList = document.getElementById('categories');
-        categoriesList.innerHTML = `
+let products = [];
+let categories = [];
+let currentCategory = null;
+let currentSubcategory = null; // Новая переменная для подкатегории
+let currentPage = 1;
+const productsPerPage = 8;
+let searchQuery = '';
+let minPriceFilter = '';
+let maxPriceFilter = '';
+let inStockOnly = false;
+
+async function loadData() {
+    try {
+        const response = await fetch('cart.json');
+        const data = await response.json();
+        products = data.products;
+        categories = data.categories;
+        renderCategories();
+        renderProducts();
+    } catch (error) {
+        console.error('Ошибка загрузки данных:', error);
+    }
+}
+
+function renderCategories() {
+    const categoriesList = document.getElementById('categories');
+    categoriesList.innerHTML = `
         <li class="${!currentCategory ? 'active' : ''}" 
         onclick="selectCategory(null)">
         Все категории
         </li>
         ${categories.map(category => `
-        <li class="${currentCategory === category ? 'active' : ''}"
-        onclick="selectCategory('${category}')">
-        ${category}
-        </li>
+            <li class="${currentCategory === category ? 'active' : ''}"
+            onclick="selectCategory('${category}')">
+            ${category}
+            </li>
         `).join('')}
-        `;
-        }
-        function selectCategory(category) {
-        currentCategory = category;
-        currentPage = 1;
-        renderCategories();
-        renderProducts();
-        }
-        
+    `;
+    renderSubcategories(); // Рендер подкатегорий после категорий
+}
+
+function renderSubcategories() {
+    const subcategoriesList = document.getElementById('subcategories'); // Предполагается наличие элемента для подкатегорий
+    if (!currentCategory) {
+        subcategoriesList.innerHTML = '';
+        return;
+    }
+    
+    const subcategories = [...new Set(products.filter(product => product.category === currentCategory).map(product => product.subcategory))];
+    
+    subcategoriesList.innerHTML = subcategories.map(subcategory => `
+        <li class="${currentSubcategory === subcategory ? 'active' : ''}"
+        onclick="selectSubcategory('${subcategory}')">
+        ${subcategory}
+        </li>
+    `).join('');
+}
+
+function selectCategory(category) {
+    currentCategory = category;
+    currentSubcategory = null; // Сбрасываем подкатегорию при выборе новой категории
+    currentPage = 1;
+    renderCategories();
+    renderProducts();
+}
+
+function selectSubcategory(subcategory) {
+    currentSubcategory = subcategory;
+    currentPage = 1;
+    renderSubcategories();
+    renderProducts();
+}
+
 function getFilteredProducts() {
     return products.filter(product => {
         const categoryMatch = !currentCategory || product.category === currentCategory;
-        const subcategoryMatch = !currentSubcategory || product.subcategory === currentSubcategory; // Добавляем фильтрацию по подкатегориям
-        const searchMatch = !searchQuery ||
-            product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            product.description.toLowerCase().includes(searchQuery.toLowerCase());
-        const priceMatch = (!minPriceFilter || product.price >= minPriceFilter) &&
-            (!maxPriceFilter || product.price <= maxPriceFilter);
-        const stockMatch = !inStockOnly || product.inStock;
+        const subcategoryMatch = !currentSubcategory || product.subcategory === currentSubcategory; // Добавлено
 
-        return categoryMatch && subcategoryMatch && searchMatch && priceMatch && stockMatch; // Обновляем условие возврата
+        const searchMatch = !searchQuery || product.name.toLowerCase().includes(searchQuery.toLowerCase()) || product.description.toLowerCase().includes(searchQuery.toLowerCase());
+        
+        const priceMatch = (!minPriceFilter || product.price >= minPriceFilter) && (!maxPriceFilter || product.price <= maxPriceFilter);
+        
+        const stockMatch = !inStockOnly || product.inStock;
+        
+        return categoryMatch && subcategoryMatch && searchMatch && priceMatch && stockMatch; // Обновлено
     });
 }
+
 
         function getCurrentPageProducts() {
         const filtered = getFilteredProducts();
