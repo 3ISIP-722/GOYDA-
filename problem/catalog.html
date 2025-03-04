@@ -72,16 +72,15 @@ font-size: 1.2em;
 list-style: none;
 }
 .sidebar li {
-padding: 10px;
-padding-left: 30px;
+padding: 30px;
 cursor: pointer;
 transition: background-color 0.3s;
 }
 
 .sidebar li:nth-child(1), .sidebar li:nth-child(2), .sidebar li:nth-child(5), .sidebar li:nth-child(8), .sidebar li:nth-child(11) {
- padding-left: 10px;
+ padding: 10px;
 }
-        
+
 .sidebar li:hover {
 background-color: #f0f0f0;
 }
@@ -405,103 +404,63 @@ text-decoration: underline;
     </footer>
 
     <script>
-let products = [];
-let categories = [];
-let currentCategory = null;
-let currentSubcategory = null; // Добавляем переменную для текущей подкатегории
-let currentPage = 1;
-const productsPerPage = 8;
-let searchQuery = '';
-let minPriceFilter = '';
-let maxPriceFilter = '';
-let inStockOnly = false;
-
-async function loadData() {
-    try {
-        const response = await fetch('cart.json');
-        const data = await response.json();
-        products = data.products;
-        categories = data.categories;
+        let products = [];
+        let categories = [];
+        let currentCategory = null;
+        let currentPage = 1;
+        const productsPerPage = 8;
+        let searchQuery = '';
+        let minPriceFilter = '';
+        let maxPriceFilter = '';
+        let inStockOnly = false;
+        
+        async function loadData() {
+        try {
+            const response = await fetch('cart.json');
+            const data = await response.json();
+            products = data.products;
+            categories = data.categories;
+            renderCategories();
+            renderProducts();
+            } catch (error) {
+            console.error('Ошибка загрузки данных:', error);
+            }
+        }
+        
+        function renderCategories() {
+        const categoriesList = document.getElementById('categories');
+        categoriesList.innerHTML = `
+        <li class="${!currentCategory ? 'active' : ''}" 
+        onclick="selectCategory(null)">
+        Все категории
+        </li>
+        ${categories.map(category => `
+        <li class="${currentCategory === category ? 'active' : ''}"
+        onclick="selectCategory('${category}')">
+        ${category}
+        </li>
+        `).join('')}
+        `;
+        }
+        function selectCategory(category) {
+        currentCategory = category;
+        currentPage = 1;
         renderCategories();
         renderProducts();
-    } catch (error) {
-        console.error('Ошибка загрузки данных:', error);
-    }
-}
-
-function renderCategories() {
-    const categoriesList = document.getElementById('categories');
-    categoriesList.innerHTML = `
-        <li class="${!currentCategory ? 'active' : ''}" 
-            onclick="selectCategory(null)">
-            Все категории
-        </li>
-        ${categories.filter(category => 
-            ["Шины", "Диски", "Масла", "Инструменты"].includes(category)).map(category => `
-            <li class="${currentCategory === category ? 'active' : ''}"
-                onclick="selectCategory('${category}')">
-                ${category}
-            </li>
-        `).join('')}
-    `;
-}
-
-function selectCategory(categoryName) {
-    currentCategory = categoryName;
-    currentSubcategory = null; // Сбрасываем подкатегорию при выборе новой категории
-    renderCategories();
-    renderSubcategories();
-    renderProducts();
-}
-
-function renderSubcategories() {
-    const subcategoriesList = document.getElementById('subcategories');
-    
-    // Очищаем список подкатегорий
-    subcategoriesList.innerHTML = '';
-
-    if (currentCategory) {
-        // Определяем подкатегории в зависимости от текущей категории
-        const subcategories = categories.filter(category => 
-            category !== currentCategory && category.includes(currentCategory) 
-        );
-
-        // Отображаем подкатегории
-        subcategories.forEach(subcategory => {
-            subcategoriesList.innerHTML += `
-                <li class="${currentSubcategory === subcategory ? 'active' : ''}"
-                    onclick="selectSubcategory('${subcategory}')">
-                    ${subcategory}
-                </li>
-            `;
-        });
-    }
-}
-
-function selectSubcategory(subcategoryName) {
-    currentSubcategory = subcategoryName;
-    renderSubcategories();
-    renderProducts();
-}
-
-function getFilteredProducts() {
-    return products.filter(product => {
+        }
+        
+        function getFilteredProducts() {
+        return products.filter(product => {
         const categoryMatch = !currentCategory || product.category === currentCategory;
-        const subcategoryMatch = !currentSubcategory || product.subcategory === currentSubcategory; // Добавляем фильтрацию по подкатегориям
         const searchMatch = !searchQuery ||
-            product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            product.description.toLowerCase().includes(searchQuery.toLowerCase());
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchQuery.toLowerCase());
         const priceMatch = (!minPriceFilter || product.price >= minPriceFilter) &&
-            (!maxPriceFilter || product.price <= maxPriceFilter);
+        (!maxPriceFilter || product.price <= maxPriceFilter);
         const stockMatch = !inStockOnly || product.inStock;
-        return categoryMatch && subcategoryMatch && searchMatch && priceMatch && stockMatch; // Обновляем условие
-    });
-}
-
-function renderProducts() {
-    const filteredProducts = getFilteredProducts();
-    // Здесь добавьте код для отображения отфильтрованных продуктов
-}
+        return categoryMatch && searchMatch && priceMatch && stockMatch;
+        });
+        }
 
         function getCurrentPageProducts() {
         const filtered = getFilteredProducts();
