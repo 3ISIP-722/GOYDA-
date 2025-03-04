@@ -409,8 +409,9 @@ text-decoration: underline;
     <script>
 let products = [];
 let categories = [];
+let subcategories = {};  // Добавляем переменную для подкатегорий
 let currentCategory = null;
-let currentSubcategory = null; // Новая переменная для подкатегории
+let currentSubcategory = null;  // Добавляем переменную для текущей подкатегории
 let currentPage = 1;
 const productsPerPage = 8;
 let searchQuery = '';
@@ -424,6 +425,7 @@ async function loadData() {
         const data = await response.json();
         products = data.products;
         categories = data.categories;
+        subcategories = data.subcategories;  // Загружаем подкатегории
         renderCategories();
         renderProducts();
     } catch (error) {
@@ -434,9 +436,71 @@ async function loadData() {
 function renderCategories() {
     const categoriesList = document.getElementById('categories');
     categoriesList.innerHTML = `
-        <li class="${!currentCategory ? 'active' : ''}" onclick="selectCategory(null)">
-            Все категории
+        <li class="${!currentCategory ? 'active' : ''}" 
+        onclick="selectCategory(null)">
+        Все категории
         </li>
+        ${categories.map(category => `
+        <li class="${currentCategory === category ? 'active' : ''}"
+        onclick="selectCategory('${category}')">
+        ${category}
+        </li>
+        `).join('')}
+    `;
+}
+
+function selectCategory(category) {
+    currentCategory = category;
+    currentSubcategory = null;  // Сброс подкатегории при выборе категории
+    currentPage = 1;
+    renderCategories();
+    renderSubcategories();  // Обновляем подкатегории
+    renderProducts();
+}
+
+function renderSubcategories() {
+    const subcategoriesList = document.getElementById('subcategories');
+    if (!currentCategory) {
+        subcategoriesList.innerHTML = '';
+        return;
+    }
+
+    const subcategoriesForCurrent = subcategories[currentCategory] || [];
+    subcategoriesList.innerHTML = subcategoriesForCurrent.map(subcategory => `
+        <li class="${currentSubcategory === subcategory ? 'active' : ''}"
+        onclick="selectSubcategory('${subcategory}')">
+        ${subcategory}
+        </li>
+    `).join('');
+}
+
+function selectSubcategory(subcategory) {
+    currentSubcategory = subcategory;
+    currentPage = 1;
+    renderSubcategories();
+    renderProducts();
+}
+
+function getFilteredProducts() {
+    return products.filter(product => {
+        const categoryMatch = !currentCategory || product.category === currentCategory;
+        const subcategoryMatch = !currentSubcategory || product.subcategory === currentSubcategory;
+
+        const searchMatch = !searchQuery || product.name.toLowerCase().includes(searchQuery.toLowerCase()) || product.description.toLowerCase().includes(searchQuery.toLowerCase());
+
+        const priceMatch = (!minPriceFilter || product.price >= minPriceFilter) && (!maxPriceFilter || product.price <= maxPriceFilter);
+
+        const stockMatch = !inStockOnly || product.inStock;
+
+        return categoryMatch && subcategoryMatch && searchMatch && priceMatch && stockMatch;
+    });
+}
+
+function getCurrentPageProducts() {
+    const filtered = getFilteredProducts();
+    const start = (currentPage - 1) * productsPerPage;
+    return filtered.slice(start, start + productsPerPage);
+}   </li>
         ${categories.map(category => `
             <li class="${currentCategory === category ? 'active' : ''}" onclick="selectCategory('${category}')">
                 ${category}
@@ -516,109 +580,111 @@ function renderProducts() {
     const currentProducts = getCurrentPageProducts(); // Получаем текущие продукты на странице
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     const cart = JSON.parse(localStorage.getItem('cart')) || {};
+// Генерация HTML для каждого продукта
+productsContainer.innerHTML = currentProducts.map(product => `
+    <div class="product-card">
+        <button class="favorite-btn ${favorites.some(fav => fav.id === product.id) ? 'active' : ''}" 
+                onclick="toggleFavorite(${JSON.stringify(product).replace(/"/g, '&quot;')})">
+            ♥
+        </button>
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <p class="category">${product.category} ${product.subcategory ? `- ${product.subcategory}` : ''}</p> <!-- Отображение подкатегории -->
+        <p class="price">Цена: ${product.price} ₽</p>
+        <p class="availability">${product.inStock ? 'В наличии' : 'Нет в наличии'}</p>
+        <button class="cart-button" 
+                onclick="addToCart(${product.id})"
+                ${!product.inStock ? 'disabled' : ''}>
+            ${cart[product.id] ? 'В корзине' : 'Добавить в корзину'}
+        </button>
+    </div>
+`).join('');
 
-    // Генерация HTML для каждого продукта
-    productsContainer.innerHTML = currentProducts.map(product => `
-        <div class="product-card">
-            <button class="favorite-btn ${favorites.some(fav => fav.id === product.id) ? 'active' : ''}" 
-                    onclick="toggleFavorite(${JSON.stringify(product).replace(/"/g, '&quot;')})">
-                ♥
-            </button>
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>${product.description}</p>
-            <p class="category">${product.category} ${product.subcategory ? `- ${product.subcategory}` : ''}</p> <!-- Отображение подкатегории -->
-            <p class="price">Цена: ${product.price} ₽</p>
-            <p class="availability">${product.inStock ? 'В наличии' : 'Нет в наличии'}</p>
-            <button class="cart-button" 
-                    onclick="addToCart(${product.id})"
-                    ${!product.inStock ? 'disabled' : ''}>
-                ${cart[product.id] ? 'В корзине' : 'Добавить в корзину'}
-            </button>
-        </div>
-    `).join('');
+updatePagination(); // Обновление пагинации после рендеринга продуктов
 
-    updatePagination(); // Обновление пагинации после рендеринга продуктов
-}
-        
-        function toggleFavorite(product) {
-        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        const index = favorites.findIndex(fav => fav.id === product.id);
-        if (index === -1) {
+function toggleFavorite(product) {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const index = favorites.findIndex(fav => fav.id === product.id);
+    if (index === -1) {
         favorites.push(product);
-        } else {
+    } else {
         favorites.splice(index, 1);
-        }
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-        renderProducts();
-        }
-        
-        function addToCart(productId) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || {};
-        cart[productId] = (cart[productId] || 0) + 1;
-        localStorage.setItem('cart', JSON.stringify(cart));
-        renderProducts();
-        }
-        
-        function updatePagination() {
-        const filtered = getFilteredProducts();
-        const totalPages = Math.ceil(filtered.length / productsPerPage);
-        document.getElementById('currentPage').textContent = currentPage;
-        document.getElementById('firstPage').disabled = currentPage === 1;
-        document.getElementById('prevPage').disabled = currentPage === 1;
-        document.getElementById('nextPage').disabled = currentPage === totalPages;
-        document.getElementById('lastPage').disabled = currentPage === totalPages;
-        }
-        
-        // Обработчики событий для фильтров
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-        searchQuery = e.target.value;
-        currentPage = 1;
-        renderProducts();
-        });
-        document.getElementById('minPrice').addEventListener('input', (e) => {
-        minPriceFilter = Number(e.target.value) || '';
-        currentPage = 1;
-        renderProducts();
-        });
-        document.getElementById('maxPrice').addEventListener('input', (e) => {
-        maxPriceFilter = Number(e.target.value) || '';
-        currentPage = 1;
-        renderProducts();
-        });
-        document.getElementById('inStock').addEventListener('change', (e) => {
-        inStockOnly = e.target.checked;
-        currentPage = 1;
-        renderProducts();
-        });
-        // Пагинация
-        document.getElementById('firstPage').addEventListener('click', () => {
-        currentPage = 1;
-        renderProducts();
-        });
-        document.getElementById('prevPage').addEventListener('click', () => {
-        if (currentPage > 1) {
+    }
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    renderProducts();
+}
+
+function addToCart(productId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    cart[productId] = (cart[productId] || 0) + 1;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderProducts();
+}
+
+function updatePagination() {
+    const filtered = getFilteredProducts();
+    const totalPages = Math.ceil(filtered.length / productsPerPage);
+    document.getElementById('currentPage').textContent = currentPage;
+    document.getElementById('firstPage').disabled = currentPage === 1;
+    document.getElementById('prevPage').disabled = currentPage === 1;
+    document.getElementById('nextPage').disabled = currentPage === totalPages;
+    document.getElementById('lastPage').disabled = currentPage === totalPages;
+}
+
+// Обработчики событий для фильтров
+document.getElementById('searchInput').addEventListener('input', (e) => {
+    searchQuery = e.target.value;
+    currentPage = 1;
+    renderProducts();
+});
+document.getElementById('minPrice').addEventListener('input', (e) => {
+    minPriceFilter = Number(e.target.value) || '';
+    currentPage = 1;
+    renderProducts();
+});
+document.getElementById('maxPrice').addEventListener('input', (e) => {
+    maxPriceFilter = Number(e.target.value) || '';
+    currentPage = 1;
+    renderProducts();
+});
+document.getElementById('inStock').addEventListener('change', (e) => {
+    inStockOnly = e.target.checked;
+    currentPage = 1;
+    renderProducts();
+});
+
+// Пагинация
+document.getElementById('firstPage').addEventListener('click', () => {
+    currentPage = 1;
+    renderProducts();
+});
+document.getElementById('prevPage').addEventListener('click', () => {
+    if (currentPage > 1) {
         currentPage--;
         renderProducts();
-        }
-        });
-        document.getElementById('nextPage').addEventListener('click', () => {
-        const filtered = getFilteredProducts();
-        const totalPages = Math.ceil(filtered.length / productsPerPage);
-        if (currentPage < totalPages) {
+    }
+});
+document.getElementById('nextPage').addEventListener('click', () => {
+    const filtered = getFilteredProducts();
+    const totalPages = Math.ceil(filtered.length / productsPerPage);
+    if (currentPage < totalPages) {
         currentPage++;
         renderProducts();
-        }
-        });
-        document.getElementById('lastPage').addEventListener('click', () => {
-        const filtered = getFilteredProducts();
-        currentPage = Math.ceil(filtered.length / productsPerPage);
-        renderProducts();
-        });
-        document.addEventListener('DOMContentLoaded', loadData);
-        function goToCart() {
-        window.location.href = 'cart.html';
     }
+});
+document.getElementById('lastPage').addEventListener('click', () => {
+    const filtered = getFilteredProducts();
+    currentPage = Math.ceil(filtered.length / productsPerPage);
+    renderProducts();
+});
+
+document.addEventListener('DOMContentLoaded', loadData);
+
+function goToCart() {
+    window.location.href = 'cart.html';
+}
+
         </script>
 </body>
 
