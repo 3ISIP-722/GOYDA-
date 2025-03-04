@@ -502,36 +502,35 @@ function getFilteredProducts() {
 }
 
 
-        function getCurrentPageProducts() {
-        const filtered = getFilteredProducts();
-        const start = (currentPage - 1) * productsPerPage;
-        return filtered.slice(start, start + productsPerPage);
-        }
-        function renderProducts() {
-        const productsContainer = document.getElementById('products');
-        const currentProducts = getCurrentPageProducts();
-        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        const cart = JSON.parse(localStorage.getItem('cart')) || {};
-        productsContainer.innerHTML = currentProducts.map(product => `
+function renderProducts() {
+    const productsContainer = document.getElementById('products');
+    const currentProducts = getCurrentPageProducts(); // Получаем текущие продукты на странице
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    // Генерация HTML для каждого продукта
+    productsContainer.innerHTML = currentProducts.map(product => `
         <div class="product-card">
-        <button class="favorite-btn ${favorites.some(fav => fav.id === product.id) ? 'active' : ''} "onclick="toggleFavorite(${JSON.stringify(product).replace(/"/g, '&quot;')})">
-        ♥
-        </button>
-        <img src="${product.image}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
-        <p class="category">${product.category}</p>
-        <p class="price">Цена: ${product.price} ₽</p>
-        <p class="availability">${product.inStock ? 'В наличии' : 'Нет в наличии'}</p>
-        <button class="cart-button" 
-        onclick="addToCart(${product.id})"
-        ${!product.inStock ? 'disabled' : ''}>
-        ${cart[product.id] ? 'В корзине' : 'Добавить в корзину'}
-        </button>
+            <button class="favorite-btn ${favorites.some(fav => fav.id === product.id) ? 'active' : ''}" 
+                    onclick="toggleFavorite(${JSON.stringify(product).replace(/"/g, '&quot;')})">
+                ♥
+            </button>
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <p class="category">${product.category} ${product.subcategory ? `- ${product.subcategory}` : ''}</p> <!-- Отображение подкатегории -->
+            <p class="price">Цена: ${product.price} ₽</p>
+            <p class="availability">${product.inStock ? 'В наличии' : 'Нет в наличии'}</p>
+            <button class="cart-button" 
+                    onclick="addToCart(${product.id})"
+                    ${!product.inStock ? 'disabled' : ''}>
+                ${cart[product.id] ? 'В корзине' : 'Добавить в корзину'}
+            </button>
         </div>
-        `).join('');
-        updatePagination();
-        }
+    `).join('');
+
+    updatePagination(); // Обновление пагинации после рендеринга продуктов
+}
         
         function toggleFavorite(product) {
         let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
