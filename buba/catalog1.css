@@ -76,10 +76,10 @@ padding-left: 30px;
 }
 
 .sidebar li:hover {
-background-color: rgb(172, 32, 32);
+background-color: #ff6b6b;
 }
 .sidebar li.active {
-background-color: rgb(172, 32, 64);
+background-color: #df5c5c;
 color: white;
 }
 .search-box {
@@ -171,7 +171,7 @@ text-align: center;
 }
 .availability {
 text-align: center;
-color: green;
+color: rgb(8, 0, 119);
 margin-bottom: 10px;
 }
 .availability:contains('Нет в наличии') {
@@ -261,7 +261,7 @@ gap: 8px;
 .quantity-controls button {
 padding: 4px 8px;
 border: none;
-background-color: #007bff;
+background-color: #ff6b6b;
 color: white;
 border-radius: 4px;
 cursor: pointer;
