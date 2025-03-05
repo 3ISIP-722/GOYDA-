@@ -146,6 +146,41 @@
         </p>
     </footer>
 
+<script>
+    // Получаем элементы
+    const logo = document.getElementById('logo');
+    const container = document.getElementById('container');
+
+    // Функция для добавления обработчика событий
+    function addEventListeners() {
+        logo.addEventListener('click', function() {
+            // Проверяем текущее состояние контейнера
+            if (container.style.display === 'none') {
+                container.style.display = 'block'; // Показываем контейнер
+            } else {
+                container.style.display = 'none'; // Скрываем контейнер
+            }
+        });
+    }
+
+    // Функция для проверки ширины экрана
+    function checkWidth() {
+        if (window.innerWidth < 768) {
+            addEventListeners(); // Добавляем обработчик, если ширина меньше 768px
+        } else {
+            // Удаляем обработчик, если ширина больше или равна 768px
+            const newContainer = container.cloneNode(true);
+            container.parentNode.replaceChild(newContainer, container);
+        }
+    }
+
+    // Проверяем ширину при загрузке страницы
+    checkWidth();
+
+    // Проверяем ширину при изменении размера окна
+    window.addEventListener('resize', checkWidth);
+</script>
+    
     <script>
  let products = [];
 let categories = [];
