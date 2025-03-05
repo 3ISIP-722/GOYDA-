@@ -1,4 +1,7 @@
+let currentProductId; // Переменная для хранения текущего ID продукта
+
 function openModal(product) {
+    currentProductId = product.id; // Сохраняем ID текущего продукта
     document.getElementById('modal-image').src = product.image;
     document.getElementById('modal-name').innerText = product.name;
     document.getElementById('modal-description').innerText = product.description;
