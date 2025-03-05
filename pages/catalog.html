@@ -147,38 +147,20 @@
     </footer>
 
 <script>
-    // Получаем элементы
-    const logo = document.querySelector('.logo');
-    const container = document.querySelector('.container');
+     const logo = document.querySelector('.logo');
+    const sidebar = document.querySelector('.sidebar');
+    let check = 0;
 
-    // Функция для добавления обработчика событий
-    function addEventListeners() {
-        logo.addEventListener('click', function() {
-            // Проверяем текущее состояние контейнера
-            if (container.style.display === 'none') {
-                container.style.display = 'block'; // Показываем контейнер
-            } else {
-                container.style.display = 'none'; // Скрываем контейнер
-            }
-        });
-    }
-
-    // Функция для проверки ширины экрана
-    function checkWidth() {
-        if (window.innerWidth < 768) {
-            addEventListeners(); // Добавляем обработчик, если ширина меньше 768px
-        } else {
-            // Удаляем обработчик, если ширина больше или равна 768px
-            const newContainer = container.cloneNode(true);
-            container.parentNode.replaceChild(newContainer, container);
+    logo.addEventListener('click', function() {
+        if (check == 0) {
+            sidebar.style.transform = 'translateX(0)';
+            check = 1;
+        }else{
+            sidebar.style.transform = 'translateX(-100%)';
+            check = 0;
         }
+            
     }
-
-    // Проверяем ширину при загрузке страницы
-    checkWidth();
-
-    // Проверяем ширину при изменении размера окна
-    window.addEventListener('resize', checkWidth);
 </script>
     
     <script>
