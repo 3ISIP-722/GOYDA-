@@ -232,7 +232,7 @@ transition: background-color 0.3s;
 .remove-btn {
 background-color: #dc3545;
 color: white;
-font-size: 10px;
+font-size: 7px;
 
 }
 .remove-btn:hover {
@@ -241,7 +241,7 @@ background-color: #c82333;
 .cart-btn {
 background-color: #28a745;
 color: white;
-font-size: 10px;
+font-size: 7px;
 }
 .cart-btn:hover {
 background-color: #218838;
@@ -255,10 +255,19 @@ cursor: not-allowed;
          .cart-btn {
                   font-size: large;
          }
+         .remove-btn {
+                  font-size: large;
+         }
          .favorites-table {
                   font-size: large;
          }
-}         
+}
+@media screen and (min-width: 768px) {
+                  .favorites-table {
+                           padding: 0;
+                           margin: 0;
+                  }
+}
 </style>
 </head>
 <body>
