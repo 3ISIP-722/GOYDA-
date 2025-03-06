@@ -80,7 +80,7 @@ padding-left: 30px;
 #subcategories ul li:hover {
    background-color: rgba(44, 43, 43, 0.603);
 }
-#subcategories ul li.active {
+#subcategories ul li::active {
    background-color: rgba(44, 43, 43, 0.803);
 }
 
