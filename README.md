@@ -19,6 +19,8 @@ GOyda — это инновационный интернет-магазин, к�
 
 <a href="https://3isip-722.github.io/GOYDA-/pages/main.html" target="_blank"><img src="https://i.imgur.com/JsjBZ7J.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 ---
+Чтобы быстро перейти на страницу "презентацию" нашего интернет-магазина, просто нажмите на изображение.
+---
 1. Успешно офрмлен файл README.MD. Файл важен для детального описания и предстваления обширной информации о функционале и возможностях продукта.
 
 <a href="https://3isip-722.github.io/GOYDA-/pages/index_login.html" target="_blank"><img src="img/ot2.jpg" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
