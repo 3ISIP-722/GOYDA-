@@ -77,10 +77,10 @@ margin: 1%;
 padding-left: 30px;
    
 }
-#subcategories li:hover {
+#subcategories ul li:hover {
    background-color: rgba(44, 43, 43, 0.603);
 }
-#subcategories li:active {
+#subcategories ul li:active {
    background-color: rgba(44, 43, 43, 0.803);
 }
 
