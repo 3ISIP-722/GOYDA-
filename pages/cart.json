@@ -66,45 +66,7 @@
         "inStock": true
         },
         {
-        "id": 60,
-        "name": "Диск спортивный 'Быстрый'",
-        "category": "Диски",
-        "subcategory": "Спортивные",
-        "description": "Диск круглый",
-        "image": "../img/diskSport.webp",
-        "price": 17711,
-        "inStock": true
-        },
-        {
-        "id": 61,
-        "name": "Диск спортивный 'Молния'",
-        "category": "Диски",
-        "subcategory": "Спортивные",
-        "description": "Диск круглый",
-        "image": "../img/diskSport_.webp",
-        "price": 16731,
-        "inStock": true
-        },
-        {
-        "id": 62,
-        "name": "Диск ретро-реплика 'Старичок'",
-        "category": "Диски",
-        "subcategory": "Ретро",
-        "description": "Диск круглый",
-        "image": "../img/retroDisk.webp",
-        "price": 10711,
-        "inStock": true
-        },
-        {
-        "id": 63,
-        "name": "Диск ретро-реплика 'Улиточка'",
-        "category": "Диски",
-        "subcategory": "Ретро",
-        "description": "Диск круглый",
-        "image": "../img/retroDisk_.webp",
-        "price": 9711,
-        "inStock": true
-        },
+      
         {
         "id": 9,
         "name": "Масло для промывки 'Чистюля'",
@@ -383,6 +345,46 @@
         "description": "Инструменты дорого",
         "image": "../img/domg.jpg",
         "price": 5671,
+        "inStock": true
+        },
+        {
+        "id": 60,
+        "name": "Диск спортивный 'Быстрый'",
+        "category": "Диски",
+        "subcategory": "Спортивные",
+        "description": "Диск круглый",
+        "image": "../img/diskSport.webp",
+        "price": 17711,
+        "inStock": true
+        },
+        {
+        "id": 61,
+        "name": "Диск спортивный 'Молния'",
+        "category": "Диски",
+        "subcategory": "Спортивные",
+        "description": "Диск круглый",
+        "image": "../img/diskSport_.webp",
+        "price": 16731,
+        "inStock": true
+        },
+        {
+        "id": 62,
+        "name": "Диск ретро-реплика 'Старичок'",
+        "category": "Диски",
+        "subcategory": "Ретро",
+        "description": "Диск круглый",
+        "image": "../img/retroDisk.webp",
+        "price": 10711,
+        "inStock": true
+        },
+        {
+        "id": 63,
+        "name": "Диск ретро-реплика 'Улиточка'",
+        "category": "Диски",
+        "subcategory": "Ретро",
+        "description": "Диск круглый",
+        "image": "../img/retroDisk_.webp",
+        "price": 9711,
         "inStock": true
         }
     ]
