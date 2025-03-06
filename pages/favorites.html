@@ -349,6 +349,33 @@ cart[productId] = (cart[productId] || 0) + 1;
 localStorage.setItem('cart', JSON.stringify(cart));
 renderProducts();
 }
+ function renderProducts() {
+    const productsContainer = document.getElementById('products');
+    const currentProducts = getCurrentPageProducts();
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    productsContainer.innerHTML = currentProducts.map(product => `
+<div class="product-card" onclick="openModal(${JSON.stringify(product).replace(/"/g, '&quot;')})">
+    <button class="favorite-btn ${favorites.some(fav => fav.id === product.id) ? 'active' : ''}"
+            onclick="toggleFavorite(${JSON.stringify(product).replace(/"/g, '&quot;')}); event.stopPropagation();">♥</button>
+    <img src="${product.image}" alt="${product.name}">
+    <h3>${product.name}</h3>
+    <p>${product.description}</p>
+    <p class="category">${product.category}</p>
+    <p class="price">Цена: ${product.price} ₽</p>
+    <p class="availability">${product.inStock ? 'В наличии' : 'Нет в наличии'}</p>
+    <button class="cart-button" 
+            onclick="addToCart(${product.id}); event.stopPropagation();"
+            ${!product.inStock ? 'disabled' : ''}>
+            ${cart[product.id] ? 'В корзине' : 'Добавить в корзину'}
+    </button>
+</div>
+
+    `).join('');
+    
+}
+
 // Загружаем избранные товары при загрузке страницы
 document.addEventListener('DOMContentLoaded', loadFavorites);
 </script>
