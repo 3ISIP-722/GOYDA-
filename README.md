@@ -22,7 +22,7 @@ GOyda — это инновационный интернет-магазин, к�
 Чтобы быстро перейти на страницу "презентацию" нашего интернет-магазина, просто нажмите на изображение.
 
 ### Интернет магазин
-<a href="https://3isip-722.github.io/GOYDA-/pages/main.html" target="_blank"><img src="https://i.imgur.com/JsjBZ7J.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+<a href="https://3isip-722.github.io/GOYDA-/pages/catalog.html" target="_blank"><img src="https://i.imgur.com/Vp0Gmi9.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 Чтобы быстро перейти на страницу нашего интернет-магазина, просто нажмите на изображение.
 
