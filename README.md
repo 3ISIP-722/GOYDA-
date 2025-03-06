@@ -1,4 +1,4 @@
-GOYda — интернет-магазин автозапчастей!
+GOyda — интернет-магазин автозапчастей!
 ============
 [![GitHub Stars](https://img.shields.io/github/stars/IgorAntun/node-chat.svg)](https://github.com/IgorAntun/node-chat/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/IgorAntun/node-chat.svg)](https://github.com/IgorAntun/node-chat/issues) [![Current Version](https://img.shields.io/badge/version-1.0.7-green.svg)](https://github.com/IgorAntun/node-chat) [![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://igorantun.com/chat) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/IgorAntun/node-chat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
@@ -15,7 +15,7 @@ GOYda — интернет-магазин автозапчастей!
 
 ---
 ### Презентация проекта
-GOYda — это инновационный интернет-магазин, который был создан нашей командой для удовлетворения потребностей автовладельцев в качественных и доступных автозапчастях. На платформе представлены более 3 миллионов позиций, включая оригинальные детали от ведущих производителей, с доставкой в любой уголок России.
+GOyda — это инновационный интернет-магазин, который был создан нашей командой для удовлетворения потребностей автовладельцев в качественных и доступных автозапчастях. На платформе представлены более 3 миллионов позиций, включая оригинальные детали от ведущих производителей, с доставкой в любой уголок России.
 
 <a href="https://3isip-722.github.io/GOYDA-/pages/main.html" target="_blank"><img src="https://i.imgur.com/JsjBZ7J.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 ---
