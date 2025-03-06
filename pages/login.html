@@ -97,7 +97,7 @@
                 <div class="error" id="loginPasswordError"></div>
             </div>
 
-            <button type="submit">Войти</button>
+            <button onklik="goToCart()" type="submit">Войти</button>
         </form>
     </div>
 
@@ -143,6 +143,10 @@
                 alert('Вход выполнен успешно!');
             }
         });
+        document.addEventListener('DOMContentLoaded', loadData);
+        function goToCart() {
+        window.location.href = 'catalog.html';
+    }
     </script>
 
 </body>
