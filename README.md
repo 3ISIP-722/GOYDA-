@@ -17,7 +17,7 @@ GOYda — интернет-магазин автозапчастей!
 ### Презентация проекта
 GOYda — это инновационный интернет-магазин, который был создан нашей командой для удовлетворения потребностей автовладельцев в качественных и доступных автозапчастях. На платформе представлены более 3 миллионов позиций, включая оригинальные детали от ведущих производителей, с доставкой в любой уголок России.
 
-<a href="https://3isip-722.github.io/GOYDA-/pages/" target="_blank"><img src="https://i.imgur.com/JsjBZ7J.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+<a href="https://3isip-722.github.io/GOYDA-/pages/main.html" target="_blank"><img src="https://i.imgur.com/JsjBZ7J.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 ---
 1. Успешно офрмлен файл README.MD. Файл важен для детального описания и предстваления обширной информации о функционале и возможностях продукта.
 
