@@ -287,10 +287,10 @@
         },
         {
         "id": 31,
-        "name": "Шина зимняя 'Лед-ок'",
-        "category": "Шины",
-        "subcategory": "Зимние",
-        "description": "Покрышка круглая",
+        "name": "Диск Чёрный 'Лед-ок'",
+        "category": "Диски",
+        "subcategory": "Спортивные",
+        "description": "Диск круглый",
         "image": "../img/winter_.jpg",
         "price": 5056,
         "inStock": true
