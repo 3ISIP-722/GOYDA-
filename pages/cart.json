@@ -66,7 +66,7 @@
         "inStock": true
         },
         {
-        "id": 5,
+        "id": 60,
         "name": "Диск спортивный 'Быстрый'",
         "category": "Диски",
         "subcategory": "Спортивные",
@@ -76,7 +76,7 @@
         "inStock": true
         },
         {
-        "id": 6,
+        "id": 61,
         "name": "Диск спортивный 'Молния'",
         "category": "Диски",
         "subcategory": "Спортивные",
@@ -86,7 +86,7 @@
         "inStock": true
         },
         {
-        "id": 7,
+        "id": 62,
         "name": "Диск ретро-реплика 'Старичок'",
         "category": "Диски",
         "subcategory": "Ретро",
@@ -96,7 +96,7 @@
         "inStock": true
         },
         {
-        "id": 8,
+        "id": 63,
         "name": "Диск ретро-реплика 'Улиточка'",
         "category": "Диски",
         "subcategory": "Ретро",
