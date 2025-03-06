@@ -336,7 +336,7 @@ onclick="removeFromFavorites(${product.id})">
 </button>
 <button class="action-btn cart-btn" onclick="addToCart(${product.id})" 
 ${!product.inStock ? 'disabled' : ''}>
-В корзину
+Купить
 </button>
 </td>
 </tr>
@@ -353,6 +353,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || {};
 cart[productId] = (cart[productId] || 0) + 1;
 localStorage.setItem('cart', JSON.stringify(cart));
 renderProducts();
+alert('Товар теперь в корзине!')
 }
  function renderProducts() {
     const productsContainer = document.getElementById('products');
